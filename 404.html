@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0F172A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Grid background — same as hero */
+    .error-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(248,250,252,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(248,250,252,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .error-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+    }
+
+    .error-code {
+      font-family: var(--font-mono);
+      font-size: clamp(6rem, 20vw, 10rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .error-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .error-heading {
+      font-size: clamp(1.4rem, 4vw, 1.85rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .error-body {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .error-terminal {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-mid);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      margin-bottom: 2.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+    }
+
+    .terminal-line {
+      display: flex;
+      gap: 0.75rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+    }
+
+    .terminal-prompt { color: var(--accent-blue); }
+    .terminal-cmd    { color: var(--text-primary); }
+    .terminal-output { color: var(--status-red); }
+    .terminal-suggest { color: var(--accent-orange); }
+
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="error-page" role="main">
+    <div class="error-inner">
+
+      <div class="error-code" aria-label="Error 404">404</div>
+      <p class="error-label">// page not found</p>
+
+      <h1 class="error-heading">This route doesn't exist.</h1>
+      <p class="error-body">
+        The page you're looking for was either moved, deleted, or never deployed.
+        Check the URL or head back to a known-good route.
+      </p>
+
+      <div class="error-terminal" aria-label="Terminal output">
+        <div class="terminal-line">
+          <span class="terminal-prompt">$</span>
+          <span class="terminal-cmd">curl https://yourportfolio.dev<span id="error-path"></span></span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-output">Error: 404 Not Found — resource does not exist</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-suggest">→ Try: <a href="index.html" style="color:var(--accent-blue)">/ (home)</a></span>
+        </div>
+      </div>
+
+      <div class="error-actions">
+        <a href="index.html"   class="btn btn-primary">Go Home</a>
+        <a href="index.html#contact" class="btn btn-ghost">Contact Me</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Show current bad path in the terminal line
+    const pathEl = document.getElementById('error-path');
+    if (pathEl) {
+      const p = window.location.pathname;
+      if (p && p !== '/') pathEl.textContent = p;
+    }
+  </script>
+</body>
+</html>

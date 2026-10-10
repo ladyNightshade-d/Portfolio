@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UWASE MUGISHA Esther — Full-Stack & Cybersecurity</title>
+  <meta name="description" content="Student at Rwanda Coding Academy specializing in Full-Stack Development, Ethical Hacking, and Cybersecurity. Builder of DineSphere, Codefolio, HireWise and more." />
+  <meta name="author" content="UWASE MUGISHA Esther" />
+  <meta property="og:title"       content="UWASE MUGISHA Esther — Full-Stack & Cybersecurity" />
+  <meta property="og:description" content="Student at Rwanda Coding Academy. Full-Stack Engineer & Cybersecurity Specialist." />
+  <meta property="og:type"        content="website" />
+  <meta name="theme-color"        content="#0A0F1E" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       PRELOADER
+  ═══════════════════════════════════════════ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+
+    <!-- corner brackets -->
+    <span class="pre-corner pre-corner--tl"></span>
+    <span class="pre-corner pre-corner--tr"></span>
+    <span class="pre-corner pre-corner--bl"></span>
+    <span class="pre-corner pre-corner--br"></span>
+
+    <div class="pre-inner">
+
+      <!-- spinning ring system -->
+      <div class="pre-rings" aria-hidden="true">
+        <!-- outer dashed ring -->
+        <div class="pre-ring pre-ring--outer"></div>
+        <!-- middle solid ring -->
+        <div class="pre-ring pre-ring--mid"></div>
+        <!-- inner glow ring -->
+        <div class="pre-ring pre-ring--inner"></div>
+        <!-- center monogram -->
+        <div class="pre-monogram">
+          <span>UE</span>
+        </div>
+      </div>
+
+      <!-- text block -->
+      <div class="pre-text">
+        <p class="pre-title">SYSTEM INITIALIZING</p>
+        <p class="pre-keywords">
+          <span>FULL-STACK</span>
+          <span class="pre-dot">◆</span>
+          <span>CYBERSECURITY</span>
+          <span class="pre-dot">◆</span>
+          <span>INNOVATION</span>
+        </p>
+      </div>
+
+      <!-- progress bar -->
+      <div class="pre-bar-wrap">
+        <div class="pre-bar-track">
+          <div class="pre-bar-fill" id="pre-bar-fill"></div>
+          <div class="pre-bar-glow"></div>
+        </div>
+        <span class="pre-pct" id="pre-pct">0%</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <header class="navbar anim-ready anim-from-top" id="navbar" role="banner">
+    <div class="nav-inner">
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#services"     class="nav-link">Services</a>
+        <a href="#skills"       class="nav-link">Skills</a>
+        <a href="#projects"     class="nav-link">Projects</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#certificates" class="nav-link">Certificates</a>
+        <a href="#contact"      class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-toggle"
+                aria-label="Toggle light/dark mode" aria-pressed="false">
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="burger" id="burger"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <nav aria-label="Mobile navigation">
+        <a href="#services"     class="mobile-link">Services</a>
+        <a href="#skills"       class="mobile-link">Skills</a>
+        <a href="#projects"     class="mobile-link">Projects</a>
+        <a href="#testimonials" class="mobile-link">Testimonials</a>
+        <a href="#certificates" class="mobile-link">Certificates</a>
+        <a href="#contact"      class="mobile-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="container">
+
+        <div class="hero-eyebrow anim-ready anim-from-left anim-d1">
+          <span class="eyebrow-role">Full-Stack Engineer ,Ethical hacker &amp Cybersecurity enthusiast</span>
+          <span class="eyebrow-badge">
+            <span class="status-dot" aria-hidden="true"></span>Open to opportunities
+          </span>
+        </div>
+
+        <h1 class="hero-heading anim-ready anim-from-left anim-d2" id="hero-heading">
+          Hey, I'm<br>
+          <span class="hero-name">Esther.</span>
+        </h1>
+
+        <p class="hero-tagline anim-ready anim-from-left anim-d3">I build systems. I break them too.</p>
+
+        <div class="hero-body">
+          <div class="hero-left anim-ready anim-from-left anim-d4">
+            <p class="hero-desc">
+              Student at <strong>Rwanda Coding Academy</strong>, building and
+              deploying full-stack systems using cutting-edge technologies while breaking them to see how they tick hence
+              pushing me deeper into both development and security.
+            </p>
+            <div class="hero-actions">
+              <a href="assets/resume.pdf" class="btn btn-primary" download>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download Resume
+              </a>
+              <a href="https://github.com/ladyNightshade-d" class="btn btn-ghost"
+                 target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+                View GitHub
+              </a>
+            </div>
+          </div>
+
+          <aside class="hero-card anim-ready anim-from-right anim-d5" aria-label="Profile snapshot">
+            <div class="hcard-photo-wrap">
+              <img
+                src="assets/ChatGPT Image Aug 27, 2026, 08_46_43 AM.png"
+                alt="Uwase Mugisha Esther — Rwanda Coding Academy student"
+                class="hcard-photo"
+                width="320"
+                height="340"
+              />
+              <div class="hcard-photo-badge">
+                <span class="status-dot" aria-hidden="true"></span>
+                Open to work
+              </div>
+            </div>
+            <div class="hcard-info">
+              <p class="hcard-name">UWASE MUGISHA Esther</p>
+              <p class="hcard-school">Rwanda Coding Academy</p>
+            </div>
+            <div class="hcard-divider"></div>
+            <div class="hcard-tags">
+              <span class="pill pill--indigo">Full-Stack Engineer</span>
+              <span class="pill pill--blue">Ethical Hacking</span>
+              <span class="pill pill--purple">Cybersecurity</span>
+              <span class="pill pill--green">AI / ML</span>
+            </div>
+            <div class="hcard-divider"></div>
+            <div class="hcard-stat-row">
+              <div class="hcard-stat">
+                <span class="hcard-stat-n">6+</span>
+                <span class="hcard-stat-l">Projects</span>
+              </div>
+              <div class="hcard-stat-sep"></div>
+              <div class="hcard-stat">
+                <span class="hcard-stat-n">RCA</span>
+                <span class="hcard-stat-l">School</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         MARQUEE
+    ═══════════════════════════════════════════ -->
+    <div class="marquee-section anim-ready anim-from-bottom anim-d6" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-inner">
+          <span>Full-Stack Development</span><span class="marquee-dot">◆</span>
+          <span>Ethical Hacking</span><span class="marquee-dot">◆</span>
+          <span>Cybersecurity</span><span class="marquee-dot">◆</span>
+          <span>TypeScript</span><span class="marquee-dot">◆</span>
+          <span>React &amp; Next.js</span><span class="marquee-dot">◆</span>
+          <span>Node.js</span><span class="marquee-dot">◆</span>
+          <span>Python</span><span class="marquee-dot">◆</span>
+          <span>Network Analysis</span><span class="marquee-dot">◆</span>
+          <span>Linux</span><span class="marquee-dot">◆</span>
+          <span>AI Integration</span><span class="marquee-dot">◆</span>
+          <span>System Design</span><span class="marquee-dot">◆</span>
+          <!-- duplicate for seamless loop -->
+          <span>Full-Stack Development</span><span class="marquee-dot">◆</span>
+          <span>Ethical Hacking</span><span class="marquee-dot">◆</span>
+          <span>Cybersecurity</span><span class="marquee-dot">◆</span>
+          <span>TypeScript</span><span class="marquee-dot">◆</span>
+          <span>React &amp; Next.js</span><span class="marquee-dot">◆</span>
+          <span>Node.js</span><span class="marquee-dot">◆</span>
+          <span>Python</span><span class="marquee-dot">◆</span>
+          <span>Network Analysis</span><span class="marquee-dot">◆</span>
+          <span>Linux</span><span class="marquee-dot">◆</span>
+          <span>AI Integration</span><span class="marquee-dot">◆</span>
+          <span>System Design</span><span class="marquee-dot">◆</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SERVICES
+    ═══════════════════════════════════════════ -->
+    <section class="section section--alt" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <p class="section-label"> What I do</p>
+        <h2 class="section-heading" id="services-heading">Services</h2>
+        <p class="section-sub">How I can contribute to your team or project.</p>
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <div class="service-icon service-icon--indigo">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Full-Stack Development</h3>
+            <p class="service-desc">
+              End-to-end web applications — from database schema and APIs
+              to responsive React frontends. Real-time features, clean
+              architecture, and maintainable code.
+            </p>
+            <ul class="service-list">
+              <li>React / Next.js frontends</li>
+              <li>Node.js / Python backends</li>
+              <li>REST API design &amp; integration</li>
+              <li>Real-time features with Socket.io</li>
+            </ul>
+          </div>
+
+          <div class="service-card service-card--featured">
+            <div class="service-icon service-icon--orange">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Security Auditing &amp; Ethical Hacking</h3>
+            <p class="service-desc">
+              Systematic security assessments of web applications and network
+              infrastructure. I identify vulnerabilities before attackers do
+              and document clear remediation paths.
+            </p>
+            <ul class="service-list">
+              <li>Web application pentesting</li>
+              <li>Network vulnerability scanning</li>
+              <li>Wireshark traffic analysis</li>
+              <li>Security report writing</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon service-icon--purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+              </svg>
+            </div>
+            <h3 class="service-title">AI-Powered Product Development</h3>
+            <p class="service-desc">
+              Integrating large language models and AI APIs into production
+              products — from recruitment automation to natural language
+              search and financial advisory systems.
+            </p>
+            <ul class="service-list">
+              <li>Google Gemini API integration</li>
+              <li>AI-powered search &amp; ranking</li>
+              <li>LLM-backed conversational features</li>
+              <li>Bias reduction &amp; ethical AI design</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SKILLS
+    ═══════════════════════════════════════════ -->
+    <section class="section" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <p class="section-label"> Skills inventory</p>
+        <h2 class="section-heading" id="skills-heading">Tools &amp; Technologies</h2>
+        <p class="section-sub">Three disciplines. One unified engineering mindset.</p>
+
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <div class="skill-icon skill-icon--indigo" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                </svg>
+              </div>
+              <h3 class="skill-card-title">Software Engineering</h3>
+            </div>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">TypeScript</span>
+                <span class="skill-tag tag--blue">Language</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">React / Next.js</span>
+                <span class="skill-tag tag--blue">Frontend</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Node.js</span>
+                <span class="skill-tag tag--green">Backend</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Python</span>
+                <span class="skill-tag tag--green">Backend</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">MongoDB / MySQL</span>
+                <span class="skill-tag tag--green">Database</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Socket.io</span>
+                <span class="skill-tag tag--blue">Real-time</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <div class="skill-icon skill-icon--purple" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <h3 class="skill-card-title">Cybersecurity &amp; Automation</h3>
+            </div>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Bash Scripting</span>
+                <span class="skill-tag tag--blue">Automation</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Linux Core Utils</span>
+                <span class="skill-tag tag--indigo">Systems</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Wireshark</span>
+                <span class="skill-tag tag--indigo">Security</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Nmap</span>
+                <span class="skill-tag tag--green">Security</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Network Analysis</span>
+                <span class="skill-tag tag--green">Security</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Supabase / Auth</span>
+                <span class="skill-tag tag--purple">Backend</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <div class="skill-icon skill-icon--purple" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                </svg>
+              </div>
+              <h3 class="skill-card-title">AI &amp; Systems</h3>
+            </div>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Google Gemini API</span>
+                <span class="skill-tag tag--purple">AI</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Redux Toolkit</span>
+                <span class="skill-tag tag--purple">State</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">C / C++</span>
+                <span class="skill-tag tag--purple">Systems</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Containerization</span>
+                <span class="skill-tag tag--purple">Language</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Chart.js</span>
+                <span class="skill-tag tag--purple">Viz</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Tailwind CSS</span>
+                <span class="skill-tag tag--blue">Styling</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PROJECTS
+    ═══════════════════════════════════════════ -->
+    <section class="section section--alt" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <p class="section-label"> Selected work</p>
+        <h2 class="section-heading" id="projects-heading">Projects</h2>
+        <p class="section-sub">Six products. Real problems. Shipped from RCA.</p>
+
+        <div class="proj-list">
+
+          <!-- ── DineSphere ── -->
+          <article class="proj-row" id="proj-dinesphere">
+            <div class="proj-row-inner">
+              <div class="proj-row-content">
+                <div class="proj-row-meta">
+                  <span class="proj-num">01</span>
+                  <span class="proj-badge proj-badge--built">Built</span>
+                </div>
+                <h3 class="proj-row-title">DineSphere</h3>
+                <p class="proj-row-sub">Paperless Restaurant Management System</p>
+                <p class="proj-row-desc">
+                  Restaurants lose revenue and customer trust through paper-based
+                  ordering errors and zero operational visibility. DineSphere
+                  connects customers, kitchen staff, and managers in realtime 
+                  customers to order from their phone, orders hit
+                  the kitchen screen instantly via Socket.io, and managers get a
+                  Chart.js dashboard for sales, inventory, and staff scheduling.
+                </p>
+                <div class="proj-tags">
+                  <span class="pill pill--blue">React / Next.js</span>
+                  <span class="pill pill--green">Node.js</span>
+                  <span class="pill pill--green">MongoDB</span>
+                  <span class="pill pill--blue">Socket.io</span>
+                  <span class="pill pill--purple">Chart.js</span>
+                </div>
+                <div class="proj-row-actions">
+                  <a href="https://github.com/ladyNightshade-d/Dinesphere-restroman" class="btn btn-sm btn-ghost"
+                     target="_blank" rel="noopener noreferrer">View Repo</a>
+                  <a href="#" class="btn btn-sm btn-primary"
+                     target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
+              </div>
+              <div class="proj-row-img-wrap">
+                <div class="proj-img-placeholder proj-img-placeholder--indigo">
+                  <span class="proj-img-emoji">🍽️</span>
+                  <span class="proj-img-drop-hint">Drop dinesphere.png here</span>
+                </div>
+                <!-- swap the div above for:
+                <img src="assets/projects/dinesphere.png" alt="DineSphere screenshot" class="proj-row-img" /> -->
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Codefolio ── -->
+          <article class="proj-row proj-row--alt" id="proj-codefolio">
+            <div class="proj-row-inner proj-row-inner--flip">
+              <div class="proj-row-img-wrap">
+                <div class="proj-img-placeholder proj-img-placeholder--purple">
+                  <span class="proj-img-emoji">📁</span>
+                  <span class="proj-img-drop-hint">Drop codefolio.png here</span>
+                </div>
+              </div>
+              <div class="proj-row-content">
+                <div class="proj-row-meta">
+                  <span class="proj-num">02</span>
+                  <span class="proj-badge proj-badge--built">Built</span>
+                </div>
+                <h3 class="proj-row-title">Codefolio</h3>
+                <p class="proj-row-sub">Centralized Portfolio Platform for Engineering Students</p>
+                <p class="proj-row-desc">
+                  Engineering students rebuild the same solutions in isolation with
+                  no shared discovery layer, wasting effort on problems already solved.
+                  Codefolio is a centralized portfolio platform with Gemini-powered
+                  natural language search, auto-generated skill profiles, passwordless
+                  OTP auth, and granular privacy controls for projects, hackathons,
+                  and team work.
+                </p>
+                <div class="proj-tags">
+                  <span class="pill pill--blue">Next.js</span>
+                  <span class="pill pill--purple">Gemini AI</span>
+                  <span class="pill pill--green">OTP Auth</span>
+                  <span class="pill pill--blue">TypeScript</span>
+                </div>
+                <div class="proj-row-actions">
+                  <a href="https://github.com/ladyNightshade-d/Codefolio" class="btn btn-sm btn-ghost"
+                     target="_blank" rel="noopener noreferrer">View Repo</a>
+                  <a href="#" class="btn btn-sm btn-primary"
+                     target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── HireWise ── -->
+          <article class="proj-row" id="proj-hirewise">
+            <div class="proj-row-inner">
+              <div class="proj-row-content">
+                <div class="proj-row-meta">
+                  <span class="proj-num">03</span>
+                  <span class="proj-badge proj-badge--hackathon">Hackathon</span>
+                </div>
+                <h3 class="proj-row-title">HireWise</h3>
+                <p class="proj-row-sub">AI-Powered Recruitment Platform — Umurava AI Hackathon</p>
+                <p class="proj-row-desc">
+                  Manual candidate screening is slow, biased, and breaks at scale.
+                  HireWise lets recruiters post jobs, bulk-upload candidates via CSV,
+                  and get Gemini-powered scoring breakdowns instantly. Includes a bias
+                  reduction mode that hides identifying information and AI-generated
+                  interview questions tailored to every individual candidate.
+                </p>
+                <div class="proj-tags">
+                  <span class="pill pill--blue">Next.js 16</span>
+                  <span class="pill pill--blue">TypeScript</span>
+                  <span class="pill pill--purple">Gemini AI</span>
+                  <span class="pill pill--green">Supabase</span>
+                  <span class="pill pill--indigo">Redux</span>
+                </div>
+                <div class="proj-row-actions">
+                  <a href="https://github.com/ladyNightshade-d/umurava-frontend" class="btn btn-sm btn-ghost"
+                     target="_blank" rel="noopener noreferrer">View Repo</a>
+                  <a href="#" class="btn btn-sm btn-primary"
+                     target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
+              </div>
+              <div class="proj-row-img-wrap">
+                <div class="proj-img-placeholder proj-img-placeholder--orange">
+                  <span class="proj-img-emoji">🤖</span>
+                  <span class="proj-img-drop-hint">Drop hirewise.png here</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── RePart AI ── -->
+          <article class="proj-row proj-row--alt" id="proj-repart">
+            <div class="proj-row-inner proj-row-inner--flip">
+              <div class="proj-row-img-wrap">
+                <div class="proj-img-placeholder proj-img-placeholder--green">
+                  <span class="proj-img-emoji">♻️</span>
+                  <span class="proj-img-drop-hint">Drop repart.png here</span>
+                </div>
+              </div>
+              <div class="proj-row-content">
+                <div class="proj-row-meta">
+                  <span class="proj-num">04</span>
+                  <span class="proj-badge proj-badge--built">Built</span>
+                </div>
+                <h3 class="proj-row-title">RePart AI</h3>
+                <p class="proj-row-sub">AI E-Waste Intelligence Platform</p>
+                <p class="proj-row-desc">
+                  Millions of discarded electronics across Africa still hold
+                  recoverable value but get thrown away due to lack of accessible
+                  assessment tools. RePart AI analyzes photos of broken devices
+                  through three AI layers — visual analysis, component mapping,
+                  and a decision engine — and tells users the most profitable path:
+                  repair, resell, extract parts, or recycle.
+                </p>
+                <div class="proj-tags">
+                  <span class="pill pill--purple">AI / Vision</span>
+                  <span class="pill pill--orange">Python</span>
+                  <span class="pill pill--green">E-waste</span>
+                  <span class="pill pill--blue">Next.js</span>
+                </div>
+                <div class="proj-row-actions">
+                  <a href="https://github.com/ladyNightshade-d" class="btn btn-sm btn-ghost"
+                     target="_blank" rel="noopener noreferrer">View Repo</a>
+                  <a href="#" class="btn btn-sm btn-primary"
+                     target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Her Legacy ── -->
+          <article class="proj-row" id="proj-herlegacy">
+            <div class="proj-row-inner">
+              <div class="proj-row-content">
+                <div class="proj-row-meta">
+                  <span class="proj-num">05</span>
+                  <span class="proj-badge proj-badge--built">Built</span>
+                </div>
+                <h3 class="proj-row-title">Her Legacy</h3>
+                <p class="proj-row-sub">AI Financial Companion for African Women</p>
+                <p class="proj-row-desc">
+                  African women hustling to build financial security have never had
+                  access to the frank, contextual financial guidance that wealthy people
+                  get from private advisors. Her Legacy is an AI companion — not an app,
+                  not a course — that knows your context, speaks your language, and gives
+                  real talk about money that actually applies to your real life.
+                </p>
+                <div class="proj-tags">
+                  <span class="pill pill--purple">AI / LLM</span>
+                  <span class="pill pill--indigo">FinTech</span>
+                  <span class="pill pill--orange">Africa</span>
+                  <span class="pill pill--blue">Next.js</span>
+                </div>
+                <div class="proj-row-actions">
+                  <a href="https://github.com/ladyNightshade-d" class="btn btn-sm btn-ghost"
+                     target="_blank" rel="noopener noreferrer">View Repo</a>
+                  <a href="#" class="btn btn-sm btn-primary"
+                     target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
+              </div>
+              <div class="proj-row-img-wrap">
+                <div class="proj-img-placeholder proj-img-placeholder--pink">
+                  <span class="proj-img-emoji">💜</span>
+                  <span class="proj-img-drop-hint">Drop herlegacy.png here</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Kamme ── -->
+          <article class="proj-row proj-row--alt" id="proj-kamme">
+            <div class="proj-row-inner proj-row-inner--flip">
+              <div class="proj-row-img-wrap">
+                <!-- Goldfish image — same as in the reference screenshot -->
+                <div class="proj-img-placeholder proj-img-placeholder--kamme">
+                  <span class="proj-img-emoji proj-img-emoji--xl">🐠</span>
+                </div>
+                <!-- When you have the real image:
+                <img src="assets/projects/kamme.png" alt="Kamme Hospital Scheduler" class="proj-row-img" /> -->
+              </div>
+              <div class="proj-row-content">
+                <div class="proj-row-meta">
+                  <span class="proj-num">06</span>
+                  <span class="proj-badge proj-badge--built">Built</span>
+                </div>
+                <h3 class="proj-row-title">Kamme — Hospital Scheduler</h3>
+                <p class="proj-row-sub">Mobile Hospital Appointment Management</p>
+                <p class="proj-row-desc">
+                  A mobile application for hospital appointment scheduling. Built
+                  the backend including appointment booking APIs, doctor schedule
+                  management, push notification services, and PostgreSQL database
+                  schemas — ensuring patients and doctors stay in sync without
+                  friction.
+                </p>
+                <div class="proj-tags">
+                  <span class="pill pill--blue">React Native</span>
+                  <span class="pill pill--green">Node.js</span>
+                  <span class="pill pill--green">PostgreSQL</span>
+                  <span class="pill pill--orange">Push Notifications</span>
+                </div>
+                <div class="proj-row-actions">
+                  <a href="https://github.com/hope-dev90/Kamme" class="btn btn-sm btn-ghost"
+                     target="_blank" rel="noopener noreferrer">View Repo</a>
+                  <a href="#" class="btn btn-sm btn-primary"
+                     target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /proj-list -->
+      </div>
+    </section>
+
+          <!-- DineSphere -->
+          <article class="project-card project-card--featured">
+            <div class="project-top">
+              <span class="project-num">01</span>
+              <div class="project-links">
+                <a href="https://github.com/ladyNightshade-d/Dinesphere-restroman" class="icon-btn"
+                   aria-label="View repo" target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="#" class="icon-btn" aria-label="Live demo"
+                   target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">DineSphere</h3>
+            <p class="project-desc">
+              <strong>Problem:</strong> Paper-based restaurant ordering creates errors, delays, and zero visibility for managers.
+              <strong>Solution:</strong> A paperless system where customers order from their phones, orders appear instantly on the kitchen screen via Socket.io, and managers get a Chart.js dashboard for sales, inventory, and staff scheduling.
+            </p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="pill pill--blue">React / Next.js</span>
+                <span class="pill pill--green">Node.js</span>
+                <span class="pill pill--green">MongoDB</span>
+                <span class="pill pill--blue">Socket.io</span>
+                <span class="pill pill--purple">Chart.js</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/ladyNightshade-d/Dinesphere-restroman" class="btn btn-sm btn-ghost"
+                   target="_blank" rel="noopener noreferrer">View Repo</a>
+                <a href="#" class="btn btn-sm btn-primary"
+                   target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Codefolio -->
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-num">02</span>
+              <div class="project-links">
+                <a href="https://github.com/ladyNightshade-d/Codefolio" class="icon-btn"
+                   aria-label="View repo" target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="#" class="icon-btn" aria-label="Live demo"
+                   target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Codefolio</h3>
+            <p class="project-desc">
+              <strong>Problem:</strong> Engineering students rebuild the same solutions in isolation with no shared discovery layer.
+              <strong>Solution:</strong> A centralized portfolio platform with AI-powered natural language search (Google Gemini), auto-generated skill profiles, OTP auth, and granular privacy controls for projects, hackathons, and team work.
+            </p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="pill pill--blue">Next.js</span>
+                <span class="pill pill--purple">Gemini AI</span>
+                <span class="pill pill--green">OTP Auth</span>
+                <span class="pill pill--blue">TypeScript</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/ladyNightshade-d/Codefolio" class="btn btn-sm btn-ghost"
+                   target="_blank" rel="noopener noreferrer">View Repo</a>
+                <a href="#" class="btn btn-sm btn-primary"
+                   target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- HireWise -->
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-num">03</span>
+              <div class="project-links">
+                <a href="https://github.com/ladyNightshade-d/umurava-frontend" class="icon-btn"
+                   aria-label="View repo" target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="#" class="icon-btn" aria-label="Live demo"
+                   target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">HireWise</h3>
+            <p class="project-desc">
+              <strong>Problem:</strong> Manual candidate screening is slow, biased, and doesn't scale.
+              <strong>Solution:</strong> An AI recruitment platform (built for Umurava AI Hackathon) where recruiters post jobs, bulk-upload candidates via CSV, and get Gemini-powered scoring, bias reduction mode, and AI-generated interview questions per candidate.
+            </p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="pill pill--blue">Next.js 16</span>
+                <span class="pill pill--blue">TypeScript</span>
+                <span class="pill pill--purple">Gemini AI</span>
+                <span class="pill pill--green">Supabase</span>
+                <span class="pill pill--blue">Redux</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/ladyNightshade-d/umurava-frontend" class="btn btn-sm btn-ghost"
+                   target="_blank" rel="noopener noreferrer">View Repo</a>
+                <a href="#" class="btn btn-sm btn-primary"
+                   target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- RePart AI -->
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-num">04</span>
+              <div class="project-links">
+                <a href="https://github.com/ladyNightshade-d" class="icon-btn"
+                   aria-label="View repo" target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="#" class="icon-btn" aria-label="Live demo"
+                   target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">RePart AI</h3>
+            <p class="project-desc">
+              <strong>Problem:</strong> Millions of discarded electronics in Africa still hold recoverable value but get thrown away due to lack of accessible assessment tools.
+              <strong>Solution:</strong> An AI platform that analyzes photos of broken electronics through three layers (visual analysis, component mapping, decision engine) and tells users the most profitable path — repair, resell, extract parts, or recycle.
+            </p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="pill pill--purple">AI / Vision</span>
+                <span class="pill pill--orange">Python</span>
+                <span class="pill pill--green">E-waste</span>
+                <span class="pill pill--blue">Next.js</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/ladyNightshade-d" class="btn btn-sm btn-ghost"
+                   target="_blank" rel="noopener noreferrer">View Repo</a>
+                <a href="#" class="btn btn-sm btn-primary"
+                   target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Her Legacy -->
+          <article class="project-card project-card--featured">
+            <div class="project-top">
+              <span class="project-num">05</span>
+              <div class="project-links">
+                <a href="https://github.com/ladyNightshade-d" class="icon-btn"
+                   aria-label="View repo" target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="#" class="icon-btn" aria-label="Live demo"
+                   target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Her Legacy</h3>
+            <p class="project-desc">
+              <strong>Problem:</strong> African women hustling to build financial security have never had access to the kind of frank, contextual financial guidance wealthy people get from private advisors.
+              <strong>Solution:</strong> An AI financial companion — not an app, not a course — that knows your context, speaks your language, and gives real talk about money in a way that actually applies to real life.
+            </p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="pill pill--purple">AI / LLM</span>
+                <span class="pill pill--indigo">FinTech</span>
+                <span class="pill pill--orange">Africa</span>
+                <span class="pill pill--blue">Next.js</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/ladyNightshade-d" class="btn btn-sm btn-ghost"
+                   target="_blank" rel="noopener noreferrer">View Repo</a>
+                <a href="#" class="btn btn-sm btn-primary"
+                   target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         TESTIMONIALS
+    ═══════════════════════════════════════════ -->
+    <section class="section" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <p class="section-label"> Testimonials</p>
+        <h2 class="section-heading" id="testimonials-heading">What people say</h2>
+
+        <div class="testimonials-grid">
+
+          <figure class="tcard tcard--accent">
+            <div class="tcard-quote" aria-hidden="true">"</div>
+            <blockquote class="tcard-text">
+              One of the sharpest engineers I've come across at RCA. Esther brings both
+              architectural thinking and execution depth to every project — the kind of person
+              who doesn't just ship features but actually thinks about the system.
+            </blockquote>
+            <figcaption class="tcard-author">
+              <div class="tcard-avatar" aria-hidden="true">TC</div>
+              <div>
+                <p class="tcard-name">Team Colleague</p>
+                <p class="tcard-role">Rwanda Coding Academy</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="tcard">
+            <div class="tcard-quote" aria-hidden="true">"</div>
+            <blockquote class="tcard-text">
+              Working with Esther on HireWise during the Umurava hackathon was seamless.
+              She moved fast, wrote clean code, and kept the security implications in mind
+              the whole time. Rare combination.
+            </blockquote>
+            <figcaption class="tcard-author">
+              <div class="tcard-avatar" aria-hidden="true">HM</div>
+              <div>
+                <p class="tcard-name">Hackathon Teammate</p>
+                <p class="tcard-role">Umurava AI Hackathon</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="tcard">
+            <div class="tcard-quote" aria-hidden="true">"</div>
+            <blockquote class="tcard-text">
+              Her Legacy started as a concept and Esther turned it into something that feels
+              genuinely human. The AI responds like someone who actually understands the user's
+              reality — that's incredibly hard to get right.
+            </blockquote>
+            <figcaption class="tcard-author">
+              <div class="tcard-avatar" aria-hidden="true">AM</div>
+              <div>
+                <p class="tcard-name">Advisor</p>
+                <p class="tcard-role">Product Mentor</p>
+              </div>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CERTIFICATES
+    ═══════════════════════════════════════════ -->
+    <section class="section" id="certificates" aria-labelledby="certs-heading">
+      <div class="container">
+        <p class="section-label"> Credentials</p>
+        <h2 class="section-heading" id="certs-heading">Certificates</h2>
+        <p class="section-sub">Formal recognition of skills and completed programs.</p>
+
+        <div class="certs-grid" id="certs-grid">
+
+          <!-- 1 — picoCTF / Upanzi Africa Leaderboard -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--gold">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </div>
+              <span class="cert-issuer">picoCTF · Upanzi Africa</span>
+            </div>
+            <h3 class="cert-title">Best Team in highschool women in Cybersecurity Africa CTF Leaderboard</h3>
+            <p class="cert-date">June 2026</p>
+            <a href="assets/certificates/picoCTF_certs_Upanzi_Africa_leaderboards_Teams_cert_best_team_individual-48.pdf"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- 2 — Quarterfinalist Competition -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--indigo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="cert-issuer">Technovation Girls Competition 2026</span>
+            </div>
+            <h3 class="cert-title">Quarterfinalist in Technovation Girls 2026</h3>
+            <p class="cert-date">August 2026</p>
+            <a href="assets/certificates/2026-quarterfinalist-270355-54783.pdf"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- 3 — African Cybersecurity Leaderboard -->
+          <div class="cert-card cert-card--featured">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--orange">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span class="cert-issuer">picoCTF · Upanzi Africa</span>
+            </div>
+            <h3 class="cert-title">PicoCTF Best team on African Leaderboard</h3>
+            <p class="cert-date">October 2026</p>
+            <a href="assets/certificates/Cybersecurity Achievement Certificate_African_leadboard.png"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- 4 — Rwanda Cybersecurity Team Leaderboard -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--orange">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span class="cert-issuer">picoCTF · Upanzi Africa</span>
+            </div>
+            <h3 class="cert-title">Best team in TVET women in cybersecurity on Rwanda Leaderboard</h3>
+            <p class="cert-date">October 2026</p>
+            <a href="assets/certificates/Certificate%20of%20Achievement_%20Cyber%27s%20Team_Rwanda_leadboard.png"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- 5 — Ethical Hacking -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--red">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span class="cert-issuer">Simply learn skill-up</span>
+            </div>
+            <h3 class="cert-title">Ethical Hacking Certificate</h3>
+            <p class="cert-date">March 2026</p>
+            <a href="assets/certificates/My Ethical hacking 1st certificate.pdf"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- 6 — Cybersecurity -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--red">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <span class="cert-issuer">Simply learn skill-up</span>
+            </div>
+            <h3 class="cert-title">Cybersecurity Certificate</h3>
+            <p class="cert-date">March 2026</p>
+            <a href="assets/certificates/My cyber security 1st certificate.pdf"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- 7 — iLead -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--indigo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <span class="cert-issuer">iLead Program</span>
+            </div>
+            <h3 class="cert-title">iLead Leadership Certificate</h3>
+            <p class="cert-date">October 2026</p>
+            <a href="assets/certificates/MUGISHA  Esther_ILEAD_460127_Certificate.pdf"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- 8 — EF SET English -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--indigo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <span class="cert-issuer">EF SET</span>
+            </div>
+            <h3 class="cert-title">EF SET English Proficiency Certificate</h3>
+            <p class="cert-date">September 2026</p>
+            <a href="assets/certificates/EF SET Certificate.pdf"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- 9 — Imbuto Foundation -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--green">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span class="cert-issuer">Imbuto Foundation</span>
+            </div>
+            <h3 class="cert-title">Imbuto Foundation Certificate</h3>
+            <p class="cert-date">July 2026</p>
+            <a href="assets/certificates/IMBUTO_FOUNDATIO_CERT.png"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- 10 — iChoose -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--indigo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <span class="cert-issuer">iLead Program</span>
+            </div>
+            <h3 class="cert-title">iChoose Completion Certificate</h3>
+            <p class="cert-date">October 2026</p>
+            <a href="assets/certificates/UWASE%20MUGISHA%20ESTHER_ICHOOSE_114196_Certificate.pdf"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- 11 — iDo -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--indigo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <span class="cert-issuer">iLead Program</span>
+            </div>
+            <h3 class="cert-title">iDo Completion Certificate</h3>
+            <p class="cert-date">October 2026</p>
+            <a href="assets/certificates/UWASE%20MUGISHA%20ESTHER_IDO_114197_Certificate.pdf"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- 12 — UWASE_MUGISHA_Esther.pdf -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--green">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </div>
+              <span class="cert-issuer">Wavumbuzi Organizers</span>
+            </div>
+            <h3 class="cert-title">Wavumbuzi Certificate</h3>
+            <p class="cert-date">May 2026</p>
+            <a href="assets/certificates/UWASE_MUGISHA_Esther.pdf"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- 13 — certificate.pdf -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon cert-icon--green">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </div>
+              <span class="cert-issuer">Simply learn skill-up</span>
+            </div>
+            <h3 class="cert-title">Generetive AI Certificate</h3>
+            <p class="cert-date">September 2026</p>
+            <a href="assets/certificates/certificate.pdf"
+               class="cert-link" target="_blank" rel="noopener noreferrer">
+              View credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════ -->
+    <section class="section section--alt" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="contact-left">
+            <p class="section-label"> Contact</p>
+            <h2 class="section-heading" id="contact-heading">
+              Have a project<br>or need help?
+            </h2>
+            <p class="contact-sub">
+              Fill out the form and I'll get back to you within 24 hours.
+              Or reach me directly through any channel below.
+            </p>
+
+            <div class="contact-channels">
+              <a href="mailto:estheruwasemugisha@gmail.com" class="channel-link">
+                <span class="channel-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </span>
+                estheruwasemugisha@gmail.com
+              </a>
+              <a href="https://github.com/ladyNightshade-d" class="channel-link"
+                 target="_blank" rel="noopener noreferrer">
+                <span class="channel-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </span>
+                github.com/ladyNightshade-d
+              </a>
+              <a href="https://www.linkedin.com/in/uwase-mugisha-esther-962b9038a/" class="channel-link"
+                 target="_blank" rel="noopener noreferrer">
+                <span class="channel-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </span>
+                linkedin.com/in/uwase-mugisha-esther
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-name" class="form-label">Name</label>
+                <input type="text" id="f-name" name="name" class="form-input"
+                       placeholder="Your name" autocomplete="name" required aria-required="true" />
+              </div>
+              <div class="form-group">
+                <label for="f-email" class="form-label">Email</label>
+                <input type="email" id="f-email" name="email" class="form-input"
+                       placeholder="your@email.com" autocomplete="email" required aria-required="true" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="f-project" class="form-label">Your Project</label>
+              <input type="text" id="f-project" name="project" class="form-input"
+                     placeholder="Briefly describe your project or inquiry" required aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label for="f-message" class="form-label">Message</label>
+              <textarea id="f-message" name="message" class="form-textarea"
+                        placeholder="Tell me more…" rows="5" required aria-required="true"></textarea>
+            </div>
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+                <span class="btn-label">Send Message</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+              <p class="form-status" id="form-status" role="alert" aria-live="polite"></p>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <!-- ── Main 3-col grid ── -->
+      <div class="footer-grid">
+
+        <!-- Col 1 — Brand + bio + socials -->
+        <div class="footer-brand-col">
+          <p class="footer-role">Full-Stack Engineer &amp; Cybersecurity enthusiast</p>
+          <p class="footer-bio">
+            Building and deploying full-stack systems while studying how to break them.
+            Based in <span class="footer-accent">Kigali, Rwanda.</span>
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com/ladyNightshade-d" class="footer-social-link"
+               aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/uwase-mugisha-esther-962b9038a/"
+               class="footer-social-link" aria-label="LinkedIn"
+               target="_blank" rel="noopener noreferrer">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="mailto:estheruwasemugisha@gmail.com"
+               class="footer-social-link" aria-label="Email">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 — Navigation -->
+        <div class="footer-nav-col">
+          <p class="footer-col-label">Navigation</p>
+          <nav class="footer-nav-list" aria-label="Footer navigation">
+            <a href="#hero"         class="footer-nav-link">Home</a>
+            <a href="#services"     class="footer-nav-link">Services</a>
+            <a href="#skills"       class="footer-nav-link">Skills</a>
+            <a href="#projects"     class="footer-nav-link">Projects</a>
+            <a href="#testimonials" class="footer-nav-link">Testimonials</a>
+            <a href="#certificates" class="footer-nav-link">Certificates</a>
+            <a href="#contact"      class="footer-nav-link">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Col 3 — Contact details + quote -->
+        <div class="footer-contact-col">
+          <p class="footer-col-label">Contact</p>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </span>
+              <a href="mailto:estheruwasemugisha@gmail.com">estheruwasemugisha@gmail.com</a>
+            </li>
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span>Kigali, Rwanda</span>
+            </li>
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </span>
+              <a href="https://github.com/ladyNightshade-d" target="_blank" rel="noopener noreferrer">github.com/ladyNightshade-d</a>
+            </li>
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </span>
+              <a href="https://www.linkedin.com/in/uwase-mugisha-esther-962b9038a/" target="_blank" rel="noopener noreferrer">linkedin.com/in/uwase-mugisha-esther</a>
+            </li>
+          </ul>
+
+          <!-- Quote -->
+          <blockquote class="footer-quote">
+            <p>"First, solve the problem. Then, write the code."</p>
+            <cite>— John Johnson</cite>
+          </blockquote>
+        </div>
+
+      </div>
+
+      <!-- ── Bottom bar ── -->
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © <span id="year"></span> <strong>UWASE MUGISHA Esther.</strong> All rights reserved.
+        </p>
+        <p class="footer-built">Designed &amp; built by Esther</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="back-top" id="back-top" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
