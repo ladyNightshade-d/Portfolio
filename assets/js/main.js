@@ -1,88 +1,5 @@
 'use strict';
 
-/* ── PRELOADER ────────────────────────────────────────────────── */
-(function () {
-  const preloader = document.getElementById('preloader');
-  const barFill   = document.getElementById('pre-bar-fill');
-  const pctLabel  = document.getElementById('pre-pct');
-
-  if (!preloader) return;
-
-  // Lock scroll
-  document.body.classList.add('is-loading');
-
-  let progress = 0;
-  let done = false;
-
-  // Eased increment — starts fast, slows near 90, jumps to 100 on load
-  function tick() {
-    if (done) return;
-    const remaining = 92 - progress;
-    const step = Math.max(0.08, remaining * 0.008);
-    progress = Math.min(progress + step, 92);
-    update(progress);
-    requestAnimationFrame(tick);
-  }
-
-  function update(val) {
-    const v = Math.round(val);
-    if (barFill) barFill.style.width = v + '%';
-    if (pctLabel) pctLabel.textContent = v + '%';
-  }
-
-  function finish() {
-    if (done) return;
-    done = true;
-    // Rush to 100
-    let v = progress;
-    const rush = setInterval(() => {
-      v = Math.min(v + 3, 100);
-      update(v);
-      if (v >= 100) {
-        clearInterval(rush);
-        // Short pause at 100 then fade out
-        setTimeout(() => {
-          preloader.classList.add('pre-done');
-          document.body.classList.remove('is-loading');
-          // Fire page entrance animations
-          triggerEntrance();
-          // Remove from DOM after transition
-          preloader.addEventListener('transitionend', () => {
-            preloader.remove();
-          }, { once: true });
-        }, 280);
-      }
-    }, 18);
-  }
-
-  function triggerEntrance() {
-    document.querySelectorAll('.anim-ready').forEach(el => {
-      el.classList.add('anim-in');
-    });
-  }
-
-  // Start ticking immediately
-  requestAnimationFrame(tick);
-
-  // Trigger finish on window load — but enforce minimum 5s display
-  const startTime = Date.now();
-  const MIN_MS = 5000;
-
-  function scheduleFinish() {
-    const elapsed = Date.now() - startTime;
-    const wait = Math.max(0, MIN_MS - elapsed);
-    setTimeout(finish, wait);
-  }
-
-  if (document.readyState === 'complete') {
-    scheduleFinish();
-  } else {
-    window.addEventListener('load', scheduleFinish, { once: true });
-    // Hard cap — never block more than 6s
-    setTimeout(finish, 6000);
-  }
-})();
-
 /* ── REFS ─────────────────────────────────────────────────────── */
 const html        = document.documentElement;
 const themeToggle = document.getElementById('theme-toggle');
@@ -189,9 +106,15 @@ backTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'sm
 
 /* ── SCROLL REVEAL ────────────────────────────────────────────── */
 const revealSelectors = [
-  '.hero-eyebrow', '.hero-heading', '.hero-left', '.hero-card',
+  // hero elements are handled by entrance animations — excluded here
   '.about-left',   '.about-right',
-  '.about-stat-card',
+  '.service-card',
+  '.skill-card',
+  '.proj-row',
+  '.tcard',
+  '.cert-card',
+  '.contact-left', '.contact-form',
+];  '.about-stat-card',
   '.service-card',
   '.skill-card',
   '.project-card',
@@ -201,10 +124,14 @@ const revealSelectors = [
 
 revealSelectors.forEach(sel => {
   document.querySelectorAll(sel).forEach((el, i) => {
+    // skip elements already handled by entrance animations
+    if (el.classList.contains('anim-ready')) return;
     el.classList.add('reveal');
-    // stagger grid children
     const isGrid = ['service-card','skill-card','project-card','tcard','about-stat-card']
       .some(c => el.classList.contains(c));
+    if (isGrid) el.style.transitionDelay = `${(i % 3) * 0.09}s`;
+  });
+});
     if (isGrid) el.style.transitionDelay = `${(i % 3) * 0.09}s`;
   });
 });

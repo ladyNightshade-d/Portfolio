@@ -1198,6 +1198,12 @@ h1,h2,h3,h4 {
   opacity:0; transform:translateY(24px);
   transition: opacity .65s var(--ease), transform .65s var(--ease);
 }
+/* never apply reveal styles to entrance-animated elements */
+.anim-ready.reveal,
+.anim-in.reveal {
+  transition: none;
+}
+}
 .reveal.visible { opacity:1; transform:translateY(0); }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
@@ -1710,7 +1716,7 @@ body.is-loading {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: opacity .7s var(--ease), visibility .7s;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
 .preloader.pre-done {
@@ -1933,45 +1939,102 @@ body.is-loading {
    PAGE ENTRANCE ANIMATIONS — triggered after preloader exits
    ================================================================ */
 
-/* All animated elements start hidden */
+/* Elements start invisible and off-position */
 .anim-ready {
   opacity: 0;
   will-change: opacity, transform;
 }
 
-/* from left */
-.anim-from-left  { transform: translateX(-60px); }
-/* from right */
-.anim-from-right { transform: translateX(60px); }
-/* from top */
-.anim-from-top   { transform: translateY(-40px); }
-/* from bottom */
-.anim-from-bottom { transform: translateY(40px); }
-/* fade only */
-.anim-fade       { transform: none; }
+.anim-ready.anim-from-left   { transform: translateX(-140px); }
+.anim-ready.anim-from-right  { transform: translateX(140px); }
+.anim-ready.anim-from-top    { transform: translateY(-60px); }
+.anim-ready.anim-from-bottom { transform: translateY(80px); }
 
-/* fired class — smooth slide in */
-.anim-in {
-  animation: slide-in .85s var(--ease) forwards;
+/* Only when JS adds .anim-in do elements animate to their final position */
+.anim-in.anim-from-left {
+  animation: anim-from-left 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.anim-in.anim-from-right {
+  animation: anim-from-right 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.anim-in.anim-from-top {
+  animation: anim-from-top 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.anim-in.anim-from-bottom {
+  animation: anim-from-bottom 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.anim-in.anim-fade {
+  animation: anim-fade 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-@keyframes slide-in {
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
+@keyframes anim-from-left {
+  from { opacity: 0; transform: translateX(-140px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes anim-from-right {
+  from { opacity: 0; transform: translateX(140px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes anim-from-top {
+  from { opacity: 0; transform: translateY(-60px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes anim-from-bottom {
+  from { opacity: 0; transform: translateY(80px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes anim-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-/* staggered delays */
-.anim-d1  { animation-delay: .05s;  }
-.anim-d2  { animation-delay: .18s;  }
-.anim-d3  { animation-delay: .32s;  }
-.anim-d4  { animation-delay: .46s;  }
-.anim-d5  { animation-delay: .60s;  }
-.anim-d6  { animation-delay: .75s;  }
-.anim-d7  { animation-delay: .90s;  }
+/* Stagger — each delay is larger than the previous animation duration (0.85s)
+   so each element fully lands before the next one starts moving */
+.anim-d1 { animation-delay: 0.05s; }
+.anim-d2 { animation-delay: 0.45s; }
+.anim-d3 { animation-delay: 0.85s; }
+.anim-d4 { animation-delay: 1.25s; }
+.anim-d5 { animation-delay: 1.70s; }
+.anim-d6 { animation-delay: 2.15s; }
+.anim-d7 { animation-delay: 2.55s; }
 
 @media (prefers-reduced-motion: reduce) {
   .anim-ready { opacity: 1 !important; transform: none !important; }
-  .anim-in    { animation: none; }
+  .anim-in    { animation: none !important; }
+}  .anim-in    { animation: none !important; }
+}
+
+/* ================================================================
+   HERO ENTRANCE — pure CSS, fires instantly on page load
+   ================================================================ */
+.hero-eyebrow {
+  animation: anim-from-left 0.8s cubic-bezier(0.16,1,0.3,1) both;
+  animation-delay: 0.1s;
+}
+.hero-heading {
+  animation: anim-from-left 0.8s cubic-bezier(0.16,1,0.3,1) both;
+  animation-delay: 0.35s;
+}
+.hero-tagline {
+  animation: anim-from-left 0.8s cubic-bezier(0.16,1,0.3,1) both;
+  animation-delay: 0.6s;
+}
+.hero-left {
+  animation: anim-from-left 0.8s cubic-bezier(0.16,1,0.3,1) both;
+  animation-delay: 0.85s;
+}
+.hero-card {
+  animation: anim-from-right 0.8s cubic-bezier(0.16,1,0.3,1) both;
+  animation-delay: 1.15s;
+}
+.marquee-section {
+  animation: anim-from-bottom 0.8s cubic-bezier(0.16,1,0.3,1) both;
+  animation-delay: 1.45s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-eyebrow, .hero-heading, .hero-tagline,
+  .hero-left, .hero-card, .marquee-section {
+    animation: none;
+  }
 }
