@@ -98,6 +98,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const backTop = document.getElementById('back-top');
   backTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+  /* ── CARD SPOTLIGHT GLOW — cursor tracking ── */
+  const glowCards = document.querySelectorAll(
+    '.service-card, .skill-card, .tcard, .cert-card'
+  );
+
+  glowCards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width)  * 100;
+      const y = ((e.clientY - rect.top)  / rect.height) * 100;
+      card.style.setProperty('--glow-x', `${x}%`);
+      card.style.setProperty('--glow-y', `${y}%`);
+    });
+  });
+
   /* ── SCROLL REVEAL ── */
   const revealSelectors = [
     '.service-card', '.skill-card', '.proj-row',

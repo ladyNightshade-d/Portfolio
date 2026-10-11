@@ -2060,3 +2060,203 @@ body.is-loading {
     animation: none;
   }
 }
+
+/* ================================================================
+   CARD SPOTLIGHT GLOW + SECTION ENTRANCE ANIMATIONS
+   ================================================================ */
+
+/* ── SPOTLIGHT GLOW (cursor-tracked via JS CSS vars) ─────────── */
+/* Applied to: .service-card, .skill-card, .tcard, .cert-card     */
+
+.service-card,
+.skill-card,
+.tcard,
+.cert-card {
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-opacity: 0;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* The spotlight layer — sits above background, below content */
+.service-card::after,
+.skill-card::after,
+.tcard::after,
+.cert-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    280px circle at var(--glow-x) var(--glow-y),
+    rgba(79, 70, 229, 0.13) 0%,
+    rgba(56, 189, 248, 0.06) 45%,
+    transparent 70%
+  );
+  opacity: var(--glow-opacity);
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+/* Content stays above the glow */
+.service-card > *,
+.skill-card > *,
+.tcard > *,
+.cert-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Glow becomes visible on hover */
+.service-card:hover::after,
+.skill-card:hover::after,
+.tcard:hover::after,
+.cert-card:hover::after {
+  --glow-opacity: 1;
+}
+
+/* Top accent line animates on hover */
+.service-card::before,
+.skill-card::before,
+.tcard::before,
+.cert-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--indigo) 40%,
+    #38BDF8 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.5s ease, opacity 0.3s;
+  opacity: 0;
+  border-radius: inherit;
+}
+
+.service-card:hover::before,
+.skill-card:hover::before,
+.tcard:hover::before,
+.cert-card:hover::before {
+  background-position: 0% 0;
+  opacity: 1;
+}
+
+/* Border brightens on hover */
+.service-card:hover,
+.skill-card:hover,
+.tcard:hover,
+.cert-card:hover {
+  border-color: rgba(79, 70, 229, 0.4);
+  box-shadow:
+    0 0 0 1px rgba(79, 70, 229, 0.15),
+    0 8px 32px rgba(79, 70, 229, 0.12),
+    0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* ── PROJECT ROWS — left border pulse on hover ───────────────── */
+/* already have glass hover — add accent line sweep */
+.proj-row::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 0%;
+  background: linear-gradient(
+    to bottom,
+    var(--indigo),
+    #38BDF8,
+    var(--orange)
+  );
+  border-radius: 0 0 3px 3px;
+  transition: height 0.45s var(--ease);
+}
+
+.proj-row:hover::after {
+  height: 100%;
+}
+
+/* ── SECTION ENTRANCE ANIMATIONS ────────────────────────────── */
+/* Reveal upgrades — more visual per section type */
+
+/* Services — slide up with slight scale */
+.service-card.reveal {
+  transform: translateY(40px) scale(0.97);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.service-card.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Skills — slide in from left alternating right */
+.skill-card.reveal {
+  transform: translateX(-40px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.skill-card.reveal.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Testimonials — fade up */
+.tcard.reveal {
+  transform: translateY(36px);
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+}
+.tcard.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Certificates — pop up with scale */
+.cert-card.reveal {
+  transform: translateY(30px) scale(0.96);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+.cert-card.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Project rows — slide in from right */
+.proj-row.reveal {
+  transform: translateX(30px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.proj-row.reveal.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Contact form + left — fade up */
+.contact-left.reveal,
+.contact-form.reveal {
+  transform: translateY(30px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.contact-left.reveal.visible,
+.contact-form.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card.reveal,
+  .skill-card.reveal,
+  .tcard.reveal,
+  .cert-card.reveal,
+  .proj-row.reveal,
+  .contact-left.reveal,
+  .contact-form.reveal {
+    transform: none;
+    transition: opacity 0.3s;
+  }
+}
