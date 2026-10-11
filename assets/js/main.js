@@ -179,13 +179,28 @@ document.addEventListener('DOMContentLoaded', () => {
       if (label) label.textContent = 'Sending…';
       setStatus('', '');
 
-      setTimeout(() => {
+      // Send to Formspree — forwards to estheruwasemugisha@gmail.com
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(res => {
         if (submitBtn) submitBtn.disabled = false;
         if (label) label.textContent = 'Send Message';
-        setStatus("Message sent! I'll get back to you within 24 hours.", 'success');
-        contactForm.reset();
-        setTimeout(() => setStatus('', ''), 6000);
-      }, 1600);
+        if (res.ok) {
+          setStatus("Message sent! I'll get back to you within 24 hours. ✓", 'success');
+          contactForm.reset();
+          setTimeout(() => setStatus('', ''), 6000);
+        } else {
+          setStatus('Something went wrong. Please email me directly.', 'error');
+        }
+      })
+      .catch(() => {
+        if (submitBtn) submitBtn.disabled = false;
+        if (label) label.textContent = 'Send Message';
+        setStatus('Network error. Please email me directly.', 'error');
+      });
     });
   }
 
