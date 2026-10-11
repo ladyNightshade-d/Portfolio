@@ -1225,7 +1225,7 @@ h1,h2,h3,h4 {
 .anim-in.reveal {
   transition: none;
 }
-}
+
 .reveal.visible { opacity:1; transform:translateY(0); }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
@@ -2024,7 +2024,7 @@ body.is-loading {
   .anim-ready { opacity: 1 !important; transform: none !important; }
   .anim-in    { animation: none !important; }
 }  .anim-in    { animation: none !important; }
-}
+
 
 /* ================================================================
    HERO ENTRANCE — pure CSS, fires instantly on page load
@@ -2337,4 +2337,174 @@ body.is-loading {
     transform: none;
     transition: opacity 0.3s;
   }
+}
+}
+
+/* ================================================================
+   CERTIFICATE CARDS — PREVIEW STYLE
+   ================================================================ */
+
+/* Card is now an <a> tag — reset link styles */
+a.cert-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Preview area — top half of card */
+.cert-preview {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-elevated);
+  flex-shrink: 0;
+}
+
+/* Real image preview */
+.cert-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.45s var(--ease);
+}
+
+a.cert-card:hover .cert-preview-img {
+  transform: scale(1.05);
+}
+
+/* Gradient overlay so text below reads cleanly */
+.cert-preview::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--bg-card));
+  pointer-events: none;
+}
+
+/* PDF placeholder — styled by color variant */
+.cert-preview--pdf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Color variants for PDF placeholders */
+.cert-preview--indigo { background: rgba(79,70,229,.08); }
+.cert-preview--blue   { background: rgba(56,189,248,.08); }
+.cert-preview--green  { background: rgba(16,185,129,.08); }
+.cert-preview--red    { background: rgba(244,63,94,.08);  }
+.cert-preview--purple { background: rgba(139,92,246,.08); }
+
+/* Default PDF (gold/warm) */
+.cert-preview--pdf:not([class*="cert-preview--"]),
+.cert-preview--pdf.cert-preview--gold {
+  background: rgba(245,158,11,.08);
+}
+
+.cert-preview-icon {
+  width: 56px; height: 56px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.7);
+  transition: transform .3s var(--ease);
+}
+
+a.cert-card:hover .cert-preview-icon {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.cert-preview-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+}
+
+/* Card body — bottom half */
+.cert-card-body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  flex: 1;
+}
+
+.cert-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+/* Issuer badges */
+.cert-issuer-badge {
+  font-size: .68rem;
+  font-weight: 600;
+  padding: .18rem .6rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.cert-issuer-badge--gold   { background:rgba(245,158,11,.15); color:#F59E0B; border:1px solid rgba(245,158,11,.3); }
+.cert-issuer-badge--indigo { background:var(--indigo-dim);    color:var(--indigo); border:1px solid var(--indigo-border); }
+.cert-issuer-badge--orange { background:var(--orange-dim);    color:var(--orange); border:1px solid rgba(234,88,12,.3); }
+.cert-issuer-badge--red    { background:rgba(244,63,94,.1);   color:#F43F5E; border:1px solid rgba(244,63,94,.3); }
+.cert-issuer-badge--blue   { background:rgba(56,189,248,.1);  color:#0EA5E9; border:1px solid rgba(56,189,248,.25); }
+.cert-issuer-badge--green  { background:rgba(16,185,129,.1);  color:#10B981; border:1px solid rgba(16,185,129,.3); }
+.cert-issuer-badge--purple { background:rgba(139,92,246,.1);  color:#7C3AED; border:1px solid rgba(139,92,246,.3); }
+
+[data-theme="dark"] .cert-issuer-badge--green  { color:#34D399; }
+[data-theme="dark"] .cert-issuer-badge--red    { color:#FB7185; }
+[data-theme="dark"] .cert-issuer-badge--purple { color:#A78BFA; }
+
+.cert-date-inline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem;
+  color: var(--text-4);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+
+.cert-date-inline::before {
+  content: '';
+  display: inline-block;
+  width: 12px; height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2'%3E%3Crect x='3' y='4' width='18' height='18' rx='2'/%3E%3Cpath d='M16 2v4M8 2v4M3 10h18'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .6;
+}
+
+.cert-title {
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--text-1);
+  line-height: 1.35;
+  letter-spacing: -.01em;
+}
+
+/* hover lift */
+a.cert-card:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .cert-preview { height: 150px; }
 }
