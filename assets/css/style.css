@@ -2508,3 +2508,31 @@ a.cert-card:hover {
 @media (max-width: 768px) {
   .cert-preview { height: 150px; }
 }
+
+/* ── PDF IFRAME PREVIEW ──────────────────────────────────────── */
+.cert-pdf-frame {
+  width: 100%;
+  height: 180px;
+  border: none;
+  display: block;
+  /* scale down so the full certificate page fits in 180px height */
+  transform: scale(0.5);
+  transform-origin: top left;
+  width: 200%;
+  height: 360px;
+  pointer-events: none; /* clicks pass through to the <a> */
+  background: #fff;
+}
+
+/* transparent overlay — captures clicks, sends to parent <a> */
+.cert-pdf-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* zoom on hover */
+a.cert-card:hover .cert-pdf-frame {
+  transform: scale(0.52);
+}
