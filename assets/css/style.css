@@ -2068,19 +2068,97 @@ body.is-loading {
 /* ── SPOTLIGHT GLOW (cursor-tracked via JS CSS vars) ─────────── */
 /* Applied to: .service-card, .skill-card, .tcard, .cert-card     */
 
+/* ── 4 glow color themes, cycling across cards ── */
+/* Color A — Indigo / Blue (cards 1, 5, 9…)  */
+/* Color B — Emerald / Green (cards 2, 6, 10…) */
+/* Color C — Rose / Red (cards 3, 7, 11…)     */
+/* Color D — Amber / Yellow (cards 4, 8, 12…) */
+
 .service-card,
 .skill-card,
 .tcard,
 .cert-card {
-  --glow-x: 50%;
-  --glow-y: 50%;
+  --glow-x:       50%;
+  --glow-y:       50%;
   --glow-opacity: 0;
+  --glow-c1:      rgba(79, 70, 229, 0.16);   /* indigo  */
+  --glow-c2:      rgba(56, 189, 248, 0.07);  /* sky     */
+  --glow-border:  rgba(79, 70, 229, 0.40);
+  --glow-shadow:  rgba(79, 70, 229, 0.14);
+  --glow-line1:   #4F46E5;
+  --glow-line2:   #38BDF8;
   position: relative;
   isolation: isolate;
   overflow: hidden;
 }
 
-/* The spotlight layer — sits above background, below content */
+/* Green cards — 2nd, 6th, 10th… */
+.service-card:nth-child(2),
+.skill-card:nth-child(2),
+.tcard:nth-child(2),
+.cert-card:nth-child(2),
+.service-card:nth-child(6),
+.skill-card:nth-child(6),
+.tcard:nth-child(6),
+.cert-card:nth-child(6),
+.cert-card:nth-child(10) {
+  --glow-c1:     rgba(16, 185, 129, 0.16);  /* emerald */
+  --glow-c2:     rgba(52, 211, 153, 0.07);
+  --glow-border: rgba(16, 185, 129, 0.40);
+  --glow-shadow: rgba(16, 185, 129, 0.14);
+  --glow-line1:  #10B981;
+  --glow-line2:  #34D399;
+}
+
+/* Rose / Red cards — 3rd, 7th, 11th… */
+.service-card:nth-child(3),
+.skill-card:nth-child(3),
+.tcard:nth-child(3),
+.cert-card:nth-child(3),
+.service-card:nth-child(7),
+.skill-card:nth-child(7),
+.tcard:nth-child(7),
+.cert-card:nth-child(7),
+.cert-card:nth-child(11) {
+  --glow-c1:     rgba(244, 63, 94, 0.15);   /* rose    */
+  --glow-c2:     rgba(251, 113, 133, 0.07);
+  --glow-border: rgba(244, 63, 94, 0.38);
+  --glow-shadow: rgba(244, 63, 94, 0.13);
+  --glow-line1:  #F43F5E;
+  --glow-line2:  #FB7185;
+}
+
+/* Amber / Yellow cards — 4th, 8th, 12th… */
+.service-card:nth-child(4),
+.skill-card:nth-child(4),
+.tcard:nth-child(4),
+.cert-card:nth-child(4),
+.service-card:nth-child(8),
+.skill-card:nth-child(8),
+.tcard:nth-child(8),
+.cert-card:nth-child(8),
+.cert-card:nth-child(12) {
+  --glow-c1:     rgba(245, 158, 11, 0.15);  /* amber   */
+  --glow-c2:     rgba(252, 211, 77, 0.07);
+  --glow-border: rgba(245, 158, 11, 0.38);
+  --glow-shadow: rgba(245, 158, 11, 0.13);
+  --glow-line1:  #F59E0B;
+  --glow-line2:  #FCD34D;
+}
+
+/* 5th, 9th, 13th — back to indigo (already default, but explicit) */
+.cert-card:nth-child(5),
+.cert-card:nth-child(9),
+.cert-card:nth-child(13) {
+  --glow-c1:     rgba(79, 70, 229, 0.16);
+  --glow-c2:     rgba(56, 189, 248, 0.07);
+  --glow-border: rgba(79, 70, 229, 0.40);
+  --glow-shadow: rgba(79, 70, 229, 0.14);
+  --glow-line1:  #4F46E5;
+  --glow-line2:  #38BDF8;
+}
+
+/* ── Spotlight layer (uses CSS vars set above) ── */
 .service-card::after,
 .skill-card::after,
 .tcard::after,
@@ -2090,18 +2168,18 @@ body.is-loading {
   inset: 0;
   background: radial-gradient(
     280px circle at var(--glow-x) var(--glow-y),
-    rgba(79, 70, 229, 0.13) 0%,
-    rgba(56, 189, 248, 0.06) 45%,
+    var(--glow-c1) 0%,
+    var(--glow-c2) 45%,
     transparent 70%
   );
   opacity: var(--glow-opacity);
-  transition: opacity 0.35s ease;
+  transition: opacity 0.3s ease;
   pointer-events: none;
   z-index: 0;
   border-radius: inherit;
 }
 
-/* Content stays above the glow */
+/* Content above glow */
 .service-card > *,
 .skill-card > *,
 .tcard > *,
@@ -2110,7 +2188,7 @@ body.is-loading {
   z-index: 1;
 }
 
-/* Glow becomes visible on hover */
+/* Show glow on hover */
 .service-card:hover::after,
 .skill-card:hover::after,
 .tcard:hover::after,
@@ -2118,7 +2196,7 @@ body.is-loading {
   --glow-opacity: 1;
 }
 
-/* Top accent line animates on hover */
+/* Top accent line animates on hover — uses card's own color */
 .service-card::before,
 .skill-card::before,
 .tcard::before,
@@ -2130,8 +2208,8 @@ body.is-loading {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    var(--indigo) 40%,
-    #38BDF8 60%,
+    var(--glow-line1) 40%,
+    var(--glow-line2) 60%,
     transparent 100%
   );
   background-size: 200% 100%;
@@ -2139,6 +2217,7 @@ body.is-loading {
   transition: background-position 0.5s ease, opacity 0.3s;
   opacity: 0;
   border-radius: inherit;
+  z-index: 2;
 }
 
 .service-card:hover::before,
@@ -2149,17 +2228,16 @@ body.is-loading {
   opacity: 1;
 }
 
-/* Border brightens on hover */
+/* Border + shadow uses card's own color */
 .service-card:hover,
 .skill-card:hover,
 .tcard:hover,
 .cert-card:hover {
-  border-color: rgba(79, 70, 229, 0.4);
+  border-color: var(--glow-border);
   box-shadow:
-    0 0 0 1px rgba(79, 70, 229, 0.15),
-    0 8px 32px rgba(79, 70, 229, 0.12),
+    0 0 0 1px color-mix(in srgb, var(--glow-border) 50%, transparent),
+    0 8px 32px var(--glow-shadow),
     0 2px 8px rgba(0,0,0,0.2);
-}
 
 /* ── PROJECT ROWS — left border pulse on hover ───────────────── */
 /* already have glass hover — add accent line sweep */
