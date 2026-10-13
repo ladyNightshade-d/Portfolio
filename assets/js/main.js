@@ -98,6 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const backTop = document.getElementById('back-top');
   backTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+  /* ── PROJECT VIDEO — play on hover ── */
+  document.querySelectorAll('.proj-row').forEach(row => {
+    const video = row.querySelector('.proj-row-video');
+    if (!video) return;
+    row.addEventListener('mouseenter', () => { video.play().catch(() => {}); });
+    row.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+  });
+
   /* ── CARD SPOTLIGHT GLOW — cursor tracking ── */
   const glowCards = document.querySelectorAll(
     '.service-card, .skill-card, .tcard, .cert-card'
