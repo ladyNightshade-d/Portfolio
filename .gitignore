@@ -10,3 +10,8 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Large video files — too big for GitHub (use CDN or hosting instead)
+*.mp4
+*.mov
+*.webm
