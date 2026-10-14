@@ -2690,3 +2690,117 @@ a.cert-card:hover .cert-pdf-frame {
   .vid-modal { padding: .75rem; }
   .vid-modal-box { border-radius: var(--radius-lg); }
 }
+
+/* ── PHONE MOCKUP (Kamme) ────────────────────────────────────── */
+.phone-mockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  height: 100%;
+}
+
+.phone-frame {
+  width: 220px;
+  height: 440px;
+  background: #1a1f35;
+  border-radius: 36px;
+  border: 6px solid #2d3550;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 24px 60px rgba(0,0,0,.5),
+    inset 0 1px 0 rgba(255,255,255,.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform .4s var(--ease), box-shadow .4s;
+}
+
+/* notch */
+.phone-frame::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 6px;
+  background: #0d111f;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+/* home bar */
+.phone-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: rgba(255,255,255,.25);
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.proj-row:hover .phone-frame {
+  transform: translateY(-6px) rotate(1deg);
+  box-shadow:
+    0 0 0 1px rgba(79,70,229,.3),
+    0 32px 80px rgba(0,0,0,.6),
+    0 0 40px rgba(79,70,229,.15);
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #050810;
+}
+
+.phone-screen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  border-radius: 30px;
+}
+
+/* ── MOBILE PROJECT ROW LAYOUT ───────────────────────────────── */
+@media (max-width: 900px) {
+  .proj-row-inner,
+  .proj-row-inner--flip {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* image always goes BELOW content on mobile */
+  .proj-row-inner .proj-row-img-wrap    { order: 2; }
+  .proj-row-inner .proj-row-content     { order: 1; }
+  .proj-row-inner--flip .proj-row-img-wrap { order: 2; }
+  .proj-row-inner--flip .proj-row-content  { order: 1; }
+
+  .proj-img-placeholder,
+  .proj-row-img { height: 220px; }
+  .proj-row { padding: 2.5rem 0; }
+
+  /* phone mockup scales down nicely on mobile */
+  .phone-frame {
+    width: 160px;
+    height: 320px;
+    border-radius: 28px;
+  }
+  .phone-screen { border-radius: 22px; }
+  .phone-screen-img { border-radius: 22px; }
+}
+
+@media (max-width: 600px) {
+  .proj-row-title { font-size: 1.5rem; }
+  .proj-img-placeholder,
+  .proj-row-img { height: 180px; }
+  .proj-row-desc { border-left: none; padding-left: 0; }
+  .proj-row-actions { flex-direction: column; }
+  .proj-row-actions .btn { justify-content: center; }
+}
