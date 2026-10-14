@@ -2593,3 +2593,100 @@ a.cert-card:hover .cert-pdf-frame {
   background: var(--indigo);
   transform: scale(1.1);
 }
+
+/* ── VIDEO MODAL ─────────────────────────────────────────────── */
+.vid-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s var(--ease), visibility .3s;
+}
+
+.vid-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.vid-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 8, 16, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.vid-modal-box {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 860px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,.6);
+  transform: translateY(24px) scale(0.97);
+  transition: transform .35s var(--ease);
+}
+
+.vid-modal.open .vid-modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.vid-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .9rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.vid-modal-title {
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--text-1);
+}
+
+.vid-modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-mid);
+  background: var(--bg-elevated);
+  color: var(--text-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.vid-modal-close:hover {
+  border-color: var(--indigo-border);
+  color: var(--indigo);
+  background: var(--indigo-dim);
+}
+
+.vid-modal-player {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+}
+
+.vid-modal-player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 600px) {
+  .vid-modal { padding: .75rem; }
+  .vid-modal-box { border-radius: var(--radius-lg); }
+}

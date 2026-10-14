@@ -98,6 +98,42 @@ document.addEventListener('DOMContentLoaded', () => {
   const backTop = document.getElementById('back-top');
   backTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+  /* ── VIDEO MODAL ── */
+  const vidModal    = document.getElementById('vid-modal');
+  const vidIframe   = document.getElementById('vid-modal-iframe');
+  const vidTitle    = document.getElementById('vid-modal-title');
+  const vidClose    = document.getElementById('vid-modal-close');
+  const vidBackdrop = document.getElementById('vid-modal-backdrop');
+
+  function openModal(videoUrl, title) {
+    vidIframe.src = videoUrl;
+    vidTitle.textContent = title;
+    vidModal.classList.add('open');
+    vidModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    vidModal.classList.remove('open');
+    vidModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    // slight delay so fade-out plays before src is cleared
+    setTimeout(() => { vidIframe.src = ''; }, 350);
+  }
+
+  document.querySelectorAll('.demo-btn[data-video]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      openModal(btn.dataset.video, btn.dataset.title);
+    });
+  });
+
+  vidClose?.addEventListener('click', closeModal);
+  vidBackdrop?.addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && vidModal?.classList.contains('open')) closeModal();
+  });
+
   /* ── PROJECT VIDEO — play on hover ── */
   document.querySelectorAll('.proj-row').forEach(row => {
     const video = row.querySelector('.proj-row-video');
