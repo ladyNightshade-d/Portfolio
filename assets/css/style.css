@@ -1515,10 +1515,41 @@ h1,h2,h3,h4 {
 
 /* image/placeholder side */
 .proj-row-img-wrap {
+  position: relative;
   width: 100%;
   border-radius: var(--radius-lg);
   overflow: hidden;
   flex-shrink: 0;
+}
+
+/* corner arrow — visit the project */
+.proj-visit-link {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--text-1);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-mid);
+  box-shadow: var(--shadow-lg);
+  transition: transform .25s var(--ease), background .25s, color .25s, border-color .25s;
+}
+.proj-visit-link svg { width: 18px; height: 18px; }
+.proj-visit-link:hover {
+  transform: translateY(-2px) scale(1.06);
+  background: var(--indigo);
+  border-color: var(--indigo);
+  color: #fff;
+}
+.proj-visit-link:focus-visible {
+  outline: 2px solid var(--indigo);
+  outline-offset: 2px;
 }
 
 .proj-row-img {
