@@ -806,6 +806,9 @@ h1,h2,h3,h4 {
 }
 .theme-icon-invert { filter: none; }
 [data-theme="dark"] .theme-icon-invert { filter: invert(1) brightness(2); }
+/* Dark brand marks lightened so they stay legible on dark cards */
+.theme-icon-boost { filter: none; }
+[data-theme="dark"] .theme-icon-boost { filter: brightness(1.75) saturate(1.4); }
 .skill-name { 
   font-size: .85rem; 
   color: var(--text-2); 
@@ -2541,63 +2544,6 @@ a.cert-card:hover {
 /* zoom on hover */
 a.cert-card:hover .cert-pdf-frame {
   transform: scale(0.52);
-}
-
-/* ── PROJECT MEDIA (video + image) ──────────────────────────── */
-.proj-media-wrap {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.proj-row-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  opacity: 0;
-  transition: opacity .4s var(--ease);
-}
-
-/* poster image sits on top until video plays */
-.proj-media-poster {
-  position: relative;
-  z-index: 1;
-  transition: opacity .4s var(--ease), transform .4s var(--ease);
-}
-
-/* on hover — hide poster, show video, play it */
-.proj-row:hover .proj-row-video  { opacity: 1; }
-.proj-row:hover .proj-media-poster { opacity: 0; }
-
-/* play button badge */
-.proj-play-btn {
-  position: absolute;
-  top: .75rem;
-  right: .75rem;
-  z-index: 3;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: rgba(10,15,30,.65);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,.2);
-  color: #fff;
-  font-size: .7rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background .2s, transform .2s;
-  pointer-events: none;
-}
-
-.proj-row:hover .proj-play-btn {
-  background: var(--indigo);
-  transform: scale(1.1);
 }
 
 /* ── VIDEO MODAL ─────────────────────────────────────────────── */

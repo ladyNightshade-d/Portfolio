@@ -180,14 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape' && vidModal?.classList.contains('open')) closeModal();
   });
 
-  /* ── PROJECT VIDEO — play on hover ── */
-  document.querySelectorAll('.proj-row').forEach(row => {
-    const video = row.querySelector('.proj-row-video');
-    if (!video) return;
-    row.addEventListener('mouseenter', () => { video.play().catch(() => {}); });
-    row.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
-  });
-
   /* ── CARD SPOTLIGHT GLOW — cursor tracking ── */
   const glowCards = document.querySelectorAll(
     '.service-card, .skill-card, .tcard, .cert-card'
