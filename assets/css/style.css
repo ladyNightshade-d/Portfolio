@@ -168,6 +168,7 @@ h1,h2,h3,h4 {
 .pill {
   display: inline-flex;
   align-items: center;
+  gap: .35rem;
   padding: .22rem .7rem;
   border-radius: var(--radius-full);
   font-family: 'JetBrains Mono', monospace;
@@ -176,6 +177,11 @@ h1,h2,h3,h4 {
   letter-spacing: .03em;
   white-space: nowrap;
   border: 1px solid transparent;
+}
+.pill-icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
 }
 
 .pill--indigo { background:var(--indigo-dim);            color:var(--indigo);  border-color:var(--indigo-border); }
@@ -380,8 +386,8 @@ h1,h2,h3,h4 {
 
 /* ── HERO ────────────────────────────────────────────────────── */
 .hero {
-  padding-top: calc(1rem + var(--nav-h) + 5.5rem);
-  padding-bottom: 5rem;
+  padding-top: calc(1rem + var(--nav-h) + 2rem);
+  padding-bottom: 3rem;
 }
 
 /* eyebrow row */
@@ -390,7 +396,7 @@ h1,h2,h3,h4 {
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 .eyebrow-role {
   font-size: .78rem;
@@ -431,7 +437,7 @@ h1,h2,h3,h4 {
   line-height: 1.0;
   letter-spacing: -0.04em;
   color: var(--text-1);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
 }
 .hero-name {
   display: block;
@@ -444,7 +450,7 @@ h1,h2,h3,h4 {
   font-weight: 600;
   color: var(--text-3);
   letter-spacing: -0.01em;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   position: relative;
   padding-left: 1.1rem;
 }
@@ -465,7 +471,7 @@ h1,h2,h3,h4 {
 .hero-body {
   display: grid;
   grid-template-columns: 1fr 340px;
-  gap: 4rem;
+  gap: 2.5rem;
   align-items: start;
 }
 .hero-desc {
@@ -486,6 +492,7 @@ h1,h2,h3,h4 {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
+  margin-top: -8.5rem;
 }
 .hcard-avatar {
   background: linear-gradient(135deg, var(--indigo-dim) 0%, var(--orange-dim) 100%);
@@ -724,8 +731,8 @@ h1,h2,h3,h4 {
 /* ── SKILLS ──────────────────────────────────────────────────── */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 .skill-card {
   background: var(--bg-card);
@@ -733,6 +740,9 @@ h1,h2,h3,h4 {
   border-radius: var(--radius-lg);
   padding: 1.75rem;
   transition: border-color .22s, box-shadow .22s, transform .22s var(--ease);
+}
+.skill-card--full {
+  grid-column: span 2;
 }
 .skill-card:hover {
   border-color: var(--border-mid);
@@ -742,47 +752,72 @@ h1,h2,h3,h4 {
 .skill-card-header {
   display: flex;
   align-items: center;
-  gap: .7rem;
-  margin-bottom: 1.4rem;
+  gap: .75rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
 }
-.skill-icon {
-  width: 36px; height: 36px;
-  border-radius: var(--radius-xs);
-  display: flex; align-items:center; justify-content:center;
-  flex-shrink: 0;
-}
-.skill-icon--indigo { background:var(--indigo-dim);       color:var(--indigo); border:1px solid var(--indigo-border); }
-.skill-icon--orange { background:var(--orange-dim);       color:var(--orange); border:1px solid rgba(234,88,12,.28); }
-.skill-icon--purple { background:rgba(139,92,246,.1);     color:#7C3AED;       border:1px solid rgba(139,92,246,.25); }
-[data-theme="dark"] .skill-icon--purple { color:#A78BFA; }
-
 .skill-card-title {
-  font-size: .9rem;
+  font-size: .95rem;
   font-weight: 700;
   color: var(--text-1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
-.skill-list { display:flex; flex-direction:column; gap:.6rem; }
-.skill-item { display:flex; align-items:center; gap:.6rem; }
-.skill-dot  { width:5px; height:5px; border-radius:50%; background:var(--border-mid); flex-shrink:0; }
-.skill-name { font-size:.855rem; color:var(--text-2); font-weight:500; flex:1; }
-.skill-tag  {
-  font-family:'JetBrains Mono',monospace;
-  font-size:.62rem; font-weight:500; letter-spacing:.03em;
-  padding:.14rem .48rem; border-radius:var(--radius-full);
-  white-space:nowrap; border:1px solid transparent;
+.skill-sub-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 1.25rem 0 0.75rem;
+  display: block;
 }
-.tag--blue   { background:rgba(56,189,248,.10);  color:#0EA5E9; border-color:rgba(56,189,248,.22); }
-.tag--green  { background:rgba(34,197,94,.10);   color:#16A34A; border-color:rgba(34,197,94,.22); }
-.tag--indigo { background:rgba(79,70,229,.10);   color:#6366F1; border-color:rgba(79,70,229,.22); }
-.tag--orange { background:var(--orange-dim);     color:var(--orange); border-color:rgba(234,88,12,.22); }
-.tag--red    { background:rgba(239,68,68,.10);   color:#DC2626; border-color:rgba(239,68,68,.22); }
-.tag--purple { background:rgba(139,92,246,.10);  color:#7C3AED; border-color:rgba(139,92,246,.22); }
-[data-theme="dark"] .tag--indigo { color:#818CF8; }
-[data-theme="dark"] .tag--green  { color:#4ADE80; }
-[data-theme="dark"] .tag--red    { color:#F87171; }
-[data-theme="dark"] .tag--purple { color:#A78BFA; }
+.skill-sub-heading:first-child {
+  margin-top: 0;
+}
+.skill-list { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 1rem; 
+}
+.skill-item { 
+  display: flex; 
+  align-items: center; 
+  gap: .8rem; 
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+}
+.skill-icon-mini { 
+  width: 22px; 
+  height: 22px; 
+  flex-shrink: 0; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+.skill-icon-mini img,
+.skill-icon-mini svg { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain;
+}
+.theme-icon-invert { filter: none; }
+[data-theme="dark"] .theme-icon-invert { filter: invert(1) brightness(2); }
+.skill-name { 
+  font-size: .85rem; 
+  color: var(--text-2); 
+  font-weight: 600; 
+}
+.skill-tag { display: none; } /* Simplified view */
+
+@media (max-width: 768px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .skill-card--full { grid-column: span 1; }
+  .skill-list { grid-template-columns: 1fr; }
+}
 
 /* ── PROJECTS ────────────────────────────────────────────────── */
 /* ── PROJECTS (dead code — kept for reference, overridden by proj-row below) ── */
@@ -1287,10 +1322,9 @@ h1,h2,h3,h4 {
 
 .hcard-photo {
   width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: contain;
-  object-position: center bottom;
+  height: 380px;
+  object-fit: cover;
+  object-position: center top;
   display: block;
   /* gentle continuous float */
   animation: photo-float 6s ease-in-out infinite;
@@ -2023,43 +2057,15 @@ body.is-loading {
 @media (prefers-reduced-motion: reduce) {
   .anim-ready { opacity: 1 !important; transform: none !important; }
   .anim-in    { animation: none !important; }
-}  .anim-in    { animation: none !important; }
+}
 
 
 /* ================================================================
-   HERO ENTRANCE — pure CSS, fires instantly on page load
+   HERO ENTRANCE
+   Hero + marquee elements carry .anim-ready classes and are revealed
+   by JS once the preloader exits — see main.js. (The old pure-CSS
+   hero rules were removed so nothing animates behind the overlay.)
    ================================================================ */
-.hero-eyebrow {
-  animation: anim-from-left 0.8s cubic-bezier(0.16,1,0.3,1) both;
-  animation-delay: 0.1s;
-}
-.hero-heading {
-  animation: anim-from-left 0.8s cubic-bezier(0.16,1,0.3,1) both;
-  animation-delay: 0.35s;
-}
-.hero-tagline {
-  animation: anim-from-left 0.8s cubic-bezier(0.16,1,0.3,1) both;
-  animation-delay: 0.6s;
-}
-.hero-left {
-  animation: anim-from-left 0.8s cubic-bezier(0.16,1,0.3,1) both;
-  animation-delay: 0.85s;
-}
-.hero-card {
-  animation: anim-from-right 0.8s cubic-bezier(0.16,1,0.3,1) both;
-  animation-delay: 1.15s;
-}
-.marquee-section {
-  animation: anim-from-bottom 0.8s cubic-bezier(0.16,1,0.3,1) both;
-  animation-delay: 1.45s;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-eyebrow, .hero-heading, .hero-tagline,
-  .hero-left, .hero-card, .marquee-section {
-    animation: none;
-  }
-}
 
 /* ================================================================
    CARD SPOTLIGHT GLOW + SECTION ENTRANCE ANIMATIONS

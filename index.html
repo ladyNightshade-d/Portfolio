@@ -14,9 +14,47 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=5" />
+  <link rel="stylesheet" href="assets/css/style.css?v=6" />
+  <noscript>
+    <style>.anim-ready { opacity: 1 !important; transform: none !important; }</style>
+  </noscript>
 </head>
-<body>
+<body class="is-loading">
+
+  <!-- ═══════════════════════════════════════════
+       PRELOADER
+  ═══════════════════════════════════════════ -->
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading">
+    <div class="pre-corner pre-corner--tl" aria-hidden="true"></div>
+    <div class="pre-corner pre-corner--tr" aria-hidden="true"></div>
+    <div class="pre-corner pre-corner--bl" aria-hidden="true"></div>
+    <div class="pre-corner pre-corner--br" aria-hidden="true"></div>
+
+    <div class="pre-inner">
+      <div class="pre-rings" aria-hidden="true">
+        <div class="pre-ring pre-ring--outer"></div>
+        <div class="pre-ring pre-ring--mid"></div>
+        <div class="pre-ring pre-ring--inner"></div>
+        <div class="pre-monogram"><span>UME</span></div>
+      </div>
+
+      <div class="pre-text">
+        <p class="pre-title">UWASE MUGISHA Esther</p>
+        <p class="pre-keywords">
+          <span>Full-Stack</span><span class="pre-dot">◆</span>
+          <span>Cybersecurity</span><span class="pre-dot">◆</span>
+          <span>AI</span>
+        </p>
+      </div>
+
+      <div class="pre-bar-wrap">
+        <div class="pre-bar-track">
+          <div class="pre-bar-fill" id="pre-bar-fill"></div>
+        </div>
+        <span class="pre-pct" id="pre-pct">0%</span>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════════════
        NAVBAR
@@ -25,6 +63,7 @@
     <div class="nav-inner">
 
       <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#hero"         class="nav-link">Home</a>
         <a href="#services"     class="nav-link">Services</a>
         <a href="#skills"       class="nav-link">Skills</a>
         <a href="#projects"     class="nav-link">Projects</a>
@@ -55,6 +94,7 @@
 
     <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
       <nav aria-label="Mobile navigation">
+        <a href="#hero"         class="mobile-link">Home</a>
         <a href="#services"     class="mobile-link">Services</a>
         <a href="#skills"       class="mobile-link">Skills</a>
         <a href="#projects"     class="mobile-link">Projects</a>
@@ -73,22 +113,22 @@
     <section class="hero" id="hero" aria-labelledby="hero-heading">
       <div class="container">
 
-        <div class="hero-eyebrow">
+        <div class="hero-eyebrow anim-ready anim-from-left anim-d1">
           <span class="eyebrow-role">Full-Stack Engineer ,Ethical hacker &amp Cybersecurity enthusiast</span>
           <span class="eyebrow-badge">
             <span class="status-dot" aria-hidden="true"></span>Open to opportunities
           </span>
         </div>
 
-        <h1 class="hero-heading" id="hero-heading">
+        <h1 class="hero-heading anim-ready anim-from-left anim-d2" id="hero-heading">
           Hey, I'm<br>
           <span class="hero-name">Esther.</span>
         </h1>
 
-        <p class="hero-tagline">I build systems. I break them too.</p>
+        <p class="hero-tagline anim-ready anim-from-left anim-d3">I build systems. I break them too.</p>
 
         <div class="hero-body">
-          <div class="hero-left">
+          <div class="hero-left anim-ready anim-from-left anim-d4">
             <p class="hero-desc">
               Student at <strong>Rwanda Coding Academy</strong>, building and
               deploying full-stack systems using cutting-edge technologies while breaking them to see how they tick hence
@@ -115,7 +155,7 @@
             </div>
           </div>
 
-          <aside class="hero-card" aria-label="Profile snapshot">
+          <aside class="hero-card anim-ready anim-from-right anim-d5" aria-label="Profile snapshot">
             <div class="hcard-photo-wrap">
               <img
                 src="https://lh3.googleusercontent.com/d/1pFxCx-oSagVeCEFPL3pu62gmsShyBiNd"
@@ -161,7 +201,7 @@
     <!-- ═══════════════════════════════════════════
          MARQUEE
     ═══════════════════════════════════════════ -->
-    <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-section anim-ready anim-from-bottom anim-d6" aria-hidden="true">
       <div class="marquee-track">
         <div class="marquee-inner">
           <span>Full-Stack Development</span><span class="marquee-dot">◆</span>
@@ -282,136 +322,185 @@
 
         <div class="skills-grid">
 
-          <div class="skill-card">
+          <!-- ── Fullstack ── -->
+          <div class="skill-card skill-card--full">
             <div class="skill-card-header">
-              <div class="skill-icon skill-icon--indigo" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2">
-                  <polyline points="16 18 22 12 16 6"/>
-                  <polyline points="8 6 2 12 8 18"/>
-                </svg>
-              </div>
-              <h3 class="skill-card-title">Software Engineering</h3>
+              <h3 class="skill-card-title">Fullstack Engineering</h3>
             </div>
+            
+            <span class="skill-sub-heading">Frontend Development</span>
             <ul class="skill-list" role="list">
               <li class="skill-item">
-                <span class="skill-dot"></span>
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+                </span>
+                <span class="skill-name">React</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
+                </span>
                 <span class="skill-name">TypeScript</span>
-                <span class="skill-tag tag--blue">Language</span>
               </li>
               <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">React / Next.js</span>
-                <span class="skill-tag tag--blue">Frontend</span>
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="theme-icon-invert" />
+                </span>
+                <span class="skill-name">Next.js</span>
               </li>
               <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Node.js</span>
-                <span class="skill-tag tag--green">Backend</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Python</span>
-                <span class="skill-tag tag--green">Backend</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">MongoDB / MySQL</span>
-                <span class="skill-tag tag--green">Database</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Socket.io</span>
-                <span class="skill-tag tag--blue">Real-time</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-card-header">
-              <div class="skill-icon skill-icon--purple" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-              </div>
-              <h3 class="skill-card-title">Cybersecurity &amp; Automation</h3>
-            </div>
-            <ul class="skill-list" role="list">
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Bash Scripting</span>
-                <span class="skill-tag tag--blue">Automation</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Linux Core Utils</span>
-                <span class="skill-tag tag--indigo">Systems</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Wireshark</span>
-                <span class="skill-tag tag--indigo">Security</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Nmap</span>
-                <span class="skill-tag tag--green">Security</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Network Analysis</span>
-                <span class="skill-tag tag--green">Security</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Supabase / Auth</span>
-                <span class="skill-tag tag--purple">Backend</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-card-header">
-              <div class="skill-icon skill-icon--purple" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="3"/>
-                  <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
-                </svg>
-              </div>
-              <h3 class="skill-card-title">AI &amp; Systems</h3>
-            </div>
-            <ul class="skill-list" role="list">
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Google Gemini API</span>
-                <span class="skill-tag tag--purple">AI</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Redux Toolkit</span>
-                <span class="skill-tag tag--purple">State</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">C / C++</span>
-                <span class="skill-tag tag--purple">Systems</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Containerization</span>
-                <span class="skill-tag tag--purple">Language</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
-                <span class="skill-name">Chart.js</span>
-                <span class="skill-tag tag--purple">Viz</span>
-              </li>
-              <li class="skill-item">
-                <span class="skill-dot"></span>
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" />
+                </span>
                 <span class="skill-name">Tailwind CSS</span>
-                <span class="skill-tag tag--blue">Styling</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                </span>
+                <span class="skill-name">JavaScript</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux" />
+                </span>
+                <span class="skill-name">Redux</span>
+              </li>
+            </ul>
+
+            <span class="skill-sub-heading">Backend & Databases</span>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+                </span>
+                <span class="skill-name">Node.js</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+                </span>
+                <span class="skill-name">Python</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+                </span>
+                <span class="skill-name">MongoDB</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+                </span>
+                <span class="skill-name">PostgreSQL</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" alt="Supabase" />
+                </span>
+                <span class="skill-name">Supabase</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" alt="Socket.io" class="theme-icon-invert" />
+                </span>
+                <span class="skill-name">Socket.io</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ── Cybersecurity ── -->
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <h3 class="skill-card-title">Cybersecurity</h3>
+            </div>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.simpleicons.org/wireshark/1679A7" alt="Wireshark" />
+                </span>
+                <span class="skill-name">Wireshark</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://api.iconify.design/file-icons/nmap.svg?color=%2377B929" alt="Nmap" />
+                </span>
+                <span class="skill-name">Nmap</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" class="theme-icon-invert" />
+                </span>
+                <span class="skill-name">Bash Scripting</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
+                </span>
+                <span class="skill-name">Linux Core</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.simpleicons.org/kalilinux/557C94" alt="Kali" />
+                </span>
+                <span class="skill-name">Ethical Hacking</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.simpleicons.org/metasploit/77B929" alt="Metasploit" />
+                </span>
+                <span class="skill-name">Vulnerability Analysis</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ── AI & Cloud ── -->
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <h3 class="skill-card-title">AI & Cloud</h3>
+            </div>
+            
+            <span class="skill-sub-heading">Artificial Intelligence</span>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.simpleicons.org/googlegemini/4285F4" alt="Gemini" />
+                </span>
+                <span class="skill-name">Google Gemini</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.simpleicons.org/openai/412991" alt="OpenAI" class="theme-icon-invert" />
+                </span>
+                <span class="skill-name">LLM Integration</span>
+              </li>
+            </ul>
+
+            <span class="skill-sub-heading">Cloud & DevOps (Learning)</span>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+                </span>
+                <span class="skill-name">Docker</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+                </span>
+                <span class="skill-name">Git / GitHub</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="theme-icon-invert" />
+                </span>
+                <span class="skill-name">AWS Basics</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-icon-mini">
+                  <img src="https://api.iconify.design/skill-icons/vercel-light.svg" alt="Vercel" />
+                </span>
+                <span class="skill-name">Vercel</span>
               </li>
             </ul>
           </div>
@@ -450,11 +539,11 @@
                   Chart.js dashboard for sales, inventory, and staff scheduling.
                 </p>
                 <div class="proj-tags">
-                  <span class="pill pill--blue">React / Next.js</span>
-                  <span class="pill pill--green">Node.js</span>
-                  <span class="pill pill--green">MongoDB</span>
-                  <span class="pill pill--blue">Socket.io</span>
-                  <span class="pill pill--purple">Chart.js</span>
+                  <span class="pill pill--blue"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M12 7c3.314 0 6 2.239 6 5s-2.686 5-6 5-6-2.239-6-5 2.686-5 6-5z"/><path d="M12 7c-3.314 0-6 2.239-6 5s2.686 5 6 5 6-2.239 6-5-2.686-5-6-5z" transform="rotate(60 12 12)"/><path d="M12 7c-3.314 0-6 2.239-6 5s2.686 5 6 5 6-2.239 6-5-2.686-5-6-5z" transform="rotate(120 12 12)"/></svg>React / Next.js</span>
+                  <span class="pill pill--green"><svg class="pill-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 17h-2v-2h2v2zm0-4h-2v-6h2v6zm6 4h-2v-2h2v2zm0-4h-2v-6h2v6z"/></svg>Node.js</span>
+                  <span class="pill pill--green"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M5 16h14"/><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg>MongoDB</span>
+                  <span class="pill pill--blue"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Socket.io</span>
+                  <span class="pill pill--purple"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M18 9l-5 5-2-2-5 5"/></svg>Chart.js</span>
                 </div>
                 <div class="proj-row-actions">
                   <a href="https://github.com/ladyNightshade-d/Dinesphere-restroman" class="btn btn-sm btn-ghost"
@@ -494,10 +583,10 @@
                   and team work.
                 </p>
                 <div class="proj-tags">
-                  <span class="pill pill--blue">Next.js</span>
-                  <span class="pill pill--purple">Gemini AI</span>
-                  <span class="pill pill--green">OTP Auth</span>
-                  <span class="pill pill--blue">TypeScript</span>
+                  <span class="pill pill--blue"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20M12 12l5-5M12 12l5 5M12 12l-5 5M12 12l-5-5"/></svg>Next.js</span>
+                  <span class="pill pill--purple"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Gemini AI</span>
+                  <span class="pill pill--green"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>OTP Auth</span>
+                  <span class="pill pill--blue"><svg class="pill-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M1.125 0C.506 0 0 .506 0 1.125v21.75C0 23.494.506 24 1.125 24h21.75c.619 0 1.125-.506 1.125-1.125V1.125C24 .506 23.494 0 22.875 0H1.125zm17.474 15.508c0-1.107.9-2.007 2.007-2.007h.018c1.107 0 2.007.9 2.007 2.007v.018c0 1.107-.9 2.007-2.007 2.007h-.018c-1.107 0-2.007-.9-2.007-2.007v-.018zm-6.885-7.493c0-1.107.9-2.007 2.007-2.007h.018c1.107 0 2.007.9 2.007 2.007v.018c0 1.107-.9 2.007-2.007 2.007h-.018c-1.107 0-2.007-.9-2.007-2.007v-.018zM5.372 15.508c0-1.107.9-2.007 2.007-2.007h.018c1.107 0 2.007.9 2.007 2.007v.018c0 1.107-.9 2.007-2.007 2.007h-.018c-1.107 0-2.007-.9-2.007-2.007v-.018zm0-7.493c0-1.107.9-2.007 2.007-2.007h.018c1.107 0 2.007.9 2.007 2.007v.018c0 1.107-.9 2.007-2.007 2.007h-.018c-1.107 0-2.007-.9-2.007-2.007v-.018z"/></svg>TypeScript</span>
                 </div>
                 <div class="proj-row-actions">
                   <a href="https://github.com/ladyNightshade-d/Codefolio" class="btn btn-sm btn-ghost"
@@ -528,11 +617,11 @@
                   interview questions tailored to every individual candidate.
                 </p>
                 <div class="proj-tags">
-                  <span class="pill pill--blue">Next.js 16</span>
-                  <span class="pill pill--blue">TypeScript</span>
-                  <span class="pill pill--purple">Gemini AI</span>
-                  <span class="pill pill--green">Supabase</span>
-                  <span class="pill pill--indigo">Redux</span>
+                  <span class="pill pill--blue"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20M12 12l5-5M12 12l5 5M12 12l-5 5M12 12l-5-5"/></svg>Next.js 16</span>
+                  <span class="pill pill--blue"><svg class="pill-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M1.125 0C.506 0 0 .506 0 1.125v21.75C0 23.494.506 24 1.125 24h21.75c.619 0 1.125-.506 1.125-1.125V1.125C24 .506 23.494 0 22.875 0H1.125zm17.474 15.508c0-1.107.9-2.007 2.007-2.007h.018c1.107 0 2.007.9 2.007 2.007v.018c0 1.107-.9 2.007-2.007 2.007h-.018c-1.107 0-2.007-.9-2.007-2.007v-.018zm-6.885-7.493c0-1.107.9-2.007 2.007-2.007h.018c1.107 0 2.007.9 2.007 2.007v.018c0 1.107-.9 2.007-2.007 2.007h-.018c-1.107 0-2.007-.9-2.007-2.007v-.018zM5.372 15.508c0-1.107.9-2.007 2.007-2.007h.018c1.107 0 2.007.9 2.007 2.007v.018c0 1.107-.9 2.007-2.007 2.007h-.018c-1.107 0-2.007-.9-2.007-2.007v-.018zm0-7.493c0-1.107.9-2.007 2.007-2.007h.018c1.107 0 2.007.9 2.007 2.007v.018c0 1.107-.9 2.007-2.007 2.007h-.018c-1.107 0-2.007-.9-2.007-2.007v-.018z"/></svg>TypeScript</span>
+                  <span class="pill pill--purple"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Gemini AI</span>
+                  <span class="pill pill--green"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Supabase</span>
+                  <span class="pill pill--indigo"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>Redux</span>
                 </div>
                 <div class="proj-row-actions">
                   <a href="https://github.com/ladyNightshade-d/umurava-frontend" class="btn btn-sm btn-ghost"
@@ -577,10 +666,10 @@
                   repair, resell, extract parts, or recycle.
                 </p>
                 <div class="proj-tags">
-                  <span class="pill pill--purple">AI / Vision</span>
-                  <span class="pill pill--orange">Python</span>
-                  <span class="pill pill--green">E-waste</span>
-                  <span class="pill pill--blue">Next.js</span>
+                  <span class="pill pill--purple"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>AI / Vision</span>
+                  <span class="pill pill--orange"><svg class="pill-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 18c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6zm0-10c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4z"/></svg>Python</span>
+                  <span class="pill pill--green"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M12 12l5-5M12 12l5 5M12 12l-5 5M12 12l-5-5"/></svg>E-waste</span>
+                  <span class="pill pill--blue"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20M12 12l5-5M12 12l5 5M12 12l-5 5M12 12l-5-5"/></svg>Next.js</span>
                 </div>
                 <div class="proj-row-actions">
                   <a href="https://github.com/ladyNightshade-d" class="btn btn-sm btn-ghost"
@@ -596,6 +685,15 @@
           <!-- ── Her Legacy ── -->
           <article class="proj-row" id="proj-herlegacy">
             <div class="proj-row-inner">
+              <div class="proj-row-img-wrap">
+                <div class="phone-mockup">
+                  <div class="phone-frame">
+                    <div class="phone-screen">
+                      <img src="https://lh3.googleusercontent.com/d/11SBF0jrkVyx5nrRPG5vcavDi6hznIGlR" alt="Her Legacy — AI Financial Companion" class="phone-screen-img" />
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="proj-row-content">
                 <div class="proj-row-meta">
                   <span class="proj-num">05</span>
@@ -611,10 +709,10 @@
                   real talk about money that actually applies to your real life.
                 </p>
                 <div class="proj-tags">
-                  <span class="pill pill--purple">AI / LLM</span>
-                  <span class="pill pill--indigo">FinTech</span>
-                  <span class="pill pill--orange">Africa</span>
-                  <span class="pill pill--blue">Next.js</span>
+                  <span class="pill pill--purple"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>AI / LLM</span>
+                  <span class="pill pill--indigo"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>FinTech</span>
+                  <span class="pill pill--orange"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4zM9 9h6v6H9z"/></svg>Africa</span>
+                  <span class="pill pill--blue"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20M12 12l5-5M12 12l5 5M12 12l-5 5M12 12l-5-5"/></svg>Next.js</span>
                 </div>
                 <div class="proj-row-actions">
                   <a href="https://github.com/ladyNightshade-d" class="btn btn-sm btn-ghost"
@@ -624,9 +722,6 @@
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     Live Demo</a>
                 </div>
-              </div>
-              <div class="proj-row-img-wrap">
-                <img src="https://lh3.googleusercontent.com/d/11SBF0jrkVyx5nrRPG5vcavDi6hznIGlR" alt="Her Legacy — AI Financial Companion" class="proj-row-img" />
               </div>
             </div>
           </article>
@@ -658,10 +753,10 @@
                   friction.
                 </p>
                 <div class="proj-tags">
-                  <span class="pill pill--blue">React Native</span>
-                  <span class="pill pill--green">Node.js</span>
-                  <span class="pill pill--green">PostgreSQL</span>
-                  <span class="pill pill--orange">Push Notifications</span>
+                  <span class="pill pill--blue"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M12 7c3.314 0 6 2.239 6 5s-2.686 5-6 5-6-2.239-6-5 2.686-5 6-5z"/><path d="M12 7c-3.314 0-6 2.239-6 5s2.686 5 6 5 6-2.239 6-5-2.686-5-6-5z" transform="rotate(60 12 12)"/><path d="M12 7c-3.314 0-6 2.239-6 5s2.686 5 6 5 6-2.239 6-5-2.686-5-6-5z" transform="rotate(120 12 12)"/></svg>React Native</span>
+                  <span class="pill pill--green"><svg class="pill-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 17h-2v-2h2v2zm0-4h-2v-6h2v6zm6 4h-2v-2h2v2zm0-4h-2v-6h2v6z"/></svg>Node.js</span>
+                  <span class="pill pill--green"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M5 16h14"/><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg>PostgreSQL</span>
+                  <span class="pill pill--orange"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Push Notifications</span>
                 </div>
                 <div class="proj-row-actions">
                   <a href="https://github.com/hope-dev90/Kamme" class="btn btn-sm btn-ghost"
@@ -1130,6 +1225,21 @@
             </div>
           </a>
 
+          <!-- 14 — Networking Basics -->
+          <a class="cert-card" href="https://drive.google.com/drive/folders/138rIDWzbOqIQOWeI_q6E_HhMs3Fdz-_M" target="_blank" rel="noopener noreferrer">
+            <div class="cert-preview">
+              <iframe class="cert-pdf-frame" src="assets/certificates/Networking_Basics_certificate_estheruwasemugisha-gmail-com_6954ab6f-3c00-4ad0-90d7-bb66abb5c893.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" loading="lazy" title="Networking Basics Certificate preview" tabindex="-1"></iframe>
+              <div class="cert-pdf-overlay"></div>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-meta-row">
+                <span class="cert-issuer-badge cert-issuer-badge--blue">🌐 Networking</span>
+                <span class="cert-date-inline">Oct 2026</span>
+              </div>
+              <h3 class="cert-title">Networking Basics Certificate</h3>
+            </div>
+          </a>
+
         </div>
       </div>
     </section>
@@ -1340,6 +1450,6 @@
     </svg>
   </button>
 
-  <script src="assets/js/main.js?v=6"></script>
+  <script src="assets/js/main.js?v=8"></script>
 </body>
 </html>

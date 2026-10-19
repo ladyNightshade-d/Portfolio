@@ -19,6 +19,52 @@ function applyTheme(t) {
 const _saved = localStorage.getItem('theme');
 applyTheme(_saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
 
+/* ── PRELOADER ─────────────────────────────────────────────────
+   Runs the loading overlay, then reveals the page and fires the
+   hero / marquee entrance animations. */
+const PRELOAD_MS   = 5000;
+const preloaderEl  = document.getElementById('preloader');
+const preBarFill   = document.getElementById('pre-bar-fill');
+const prePctEl     = document.getElementById('pre-pct');
+const _reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function triggerEntranceAnimations() {
+  document.querySelectorAll('.anim-ready').forEach(el => el.classList.add('anim-in'));
+}
+
+let _preDone = false;
+function endPreload() {
+  if (_preDone) return;
+  _preDone = true;
+  document.body.classList.remove('is-loading');
+  if (preloaderEl) {
+    preloaderEl.classList.add('pre-done');
+    preloaderEl.setAttribute('aria-hidden', 'true');
+    window.setTimeout(() => preloaderEl.remove(), 900);
+  }
+  triggerEntranceAnimations();
+}
+
+if (!preloaderEl) {
+  // No overlay in the markup — reveal immediately.
+  endPreload();
+} else if (_reduceMotion) {
+  // Animations are disabled — don't make the user wait.
+  endPreload();
+} else {
+  const _preStart = performance.now();
+  function _preTick(now) {
+    const p = Math.min((now - _preStart) / PRELOAD_MS, 1);
+    if (preBarFill) preBarFill.style.width = (p * 100).toFixed(1) + '%';
+    if (prePctEl) prePctEl.textContent = Math.round(p * 100) + '%';
+    if (p < 1) requestAnimationFrame(_preTick);
+    else endPreload();
+  }
+  requestAnimationFrame(_preTick);
+  // Safety net — rAF pauses in background tabs, so guarantee completion.
+  window.setTimeout(endPreload, PRELOAD_MS + 2000);
+}
+
 /* ── EVERYTHING ELSE — waits for DOM ────────────────────────────*/
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -35,17 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ── NAV SCROLL ── */
-  const navbar = document.getElementById('navbar');
-  function onScroll() {
-    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 16);
-    const backTop = document.getElementById('back-top');
-    if (backTop) backTop.classList.toggle('visible', window.scrollY > 480);
-    updateActiveLink();
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
   /* ── ACTIVE NAV ── */
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id], footer[id]');
@@ -58,6 +93,17 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
   }
+
+  /* ── NAV SCROLL ── */
+  const navbar = document.getElementById('navbar');
+  function onScroll() {
+    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 16);
+    const backTop = document.getElementById('back-top');
+    if (backTop) backTop.classList.toggle('visible', window.scrollY > 480);
+    updateActiveLink();
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   /* ── MOBILE MENU ── */
   const burger    = document.getElementById('burger');
