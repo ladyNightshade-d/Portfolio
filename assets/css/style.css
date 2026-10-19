@@ -1936,6 +1936,14 @@ body.is-loading {
   50%      { box-shadow: 0 0 0 1px rgba(56,189,248,.32), 0 0 48px rgba(79,70,229,.6); }
 }
 
+/* ── Meta block (keywords + status) ─────────────────────────── */
+.pre-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
 /* ── Keywords line ──────────────────────────────────────────── */
 .pre-keywords {
   display: flex;
@@ -1950,6 +1958,28 @@ body.is-loading {
 }
 
 .pre-dot { color: #4F46E5; font-size: .5rem; }
+
+/* ── Status line ────────────────────────────────────────────── */
+.pre-status {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: .62rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(56,189,248,.72);
+}
+
+.pre-dots span {
+  animation: pre-dot-blink 1.35s ease-in-out infinite;
+}
+.pre-dots span:nth-child(2) { animation-delay: .18s; }
+.pre-dots span:nth-child(3) { animation-delay: .36s; }
+
+@keyframes pre-dot-blink {
+  0%, 60%, 100% { opacity: .15; }
+  30%           { opacity: 1; }
+}
 
 /* ── Progress bar ───────────────────────────────────────────── */
 .pre-bar-wrap {
@@ -2005,6 +2035,7 @@ body.is-loading {
   .pre-ring--mid,
   .pre-ring--inner,
   .pre-monogram { animation: none; }
+  .pre-dots span { animation: none; opacity: 1; }
 }
 
 /* short viewports — keep everything in view */
