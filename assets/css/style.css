@@ -406,29 +406,6 @@ h1,h2,h3,h4 {
   color: var(--text-3);
   font-family: 'JetBrains Mono', monospace;
 }
-.eyebrow-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: .45rem;
-  padding: .22rem .8rem;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--border-mid);
-  background: var(--bg-surface);
-  font-size: .75rem;
-  font-weight: 500;
-  color: var(--text-3);
-}
-.status-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: #4ADE80;
-  animation: pulse-dot 2.5s ease infinite;
-  flex-shrink: 0;
-}
-@keyframes pulse-dot {
-  0%,100% { box-shadow:0 0 0 0 rgba(74,222,128,.5); }
-  50%      { box-shadow:0 0 0 5px rgba(74,222,128,0); }
-}
 
 /* Main heading — Blaise large display style */
 .hero-heading {
@@ -1339,30 +1316,6 @@ h1,h2,h3,h4 {
   50%       { transform: translateY(-8px) scale(1.015); }
 }
 
-.hcard-photo-badge {
-  position: absolute;
-  bottom: .75rem;
-  left: .75rem;
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  padding: .28rem .8rem;
-  background: rgba(10, 15, 30, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: var(--radius-full);
-  font-size: .72rem;
-  font-weight: 600;
-  color: #F8FAFC;
-}
-
-[data-theme="light"] .hcard-photo-badge {
-  background: rgba(255,255,255,0.88);
-  border-color: var(--border-mid);
-  color: var(--text-1);
-}
-
 /* ── PROJECT ROW LIST ────────────────────────────────────────── */
 .proj-list {
   display: flex;
@@ -1470,6 +1423,12 @@ h1,h2,h3,h4 {
   background: var(--indigo-dim);
   color: var(--indigo);
   border: 1px solid var(--indigo-border);
+}
+
+.proj-badge--role {
+  background: transparent;
+  color: var(--text-3);
+  border: 1px solid var(--border-mid);
 }
 
 /* big title */
